@@ -1,0 +1,26 @@
+.my_modal{
+    position: absolute;
+    background-color: #fcf9f9;
+    padding: 50px;
+    width: 60%;
+
+    button{
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        background-image: url(./images/close.png);
+        background-color: #fcf9f9;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.my_modal_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.7);
+    z-index: 9999;
+}

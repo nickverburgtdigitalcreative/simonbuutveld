@@ -1,0 +1,102 @@
+#graph_s02g01 {
+    display: block;
+    position: relative;
+
+    div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+    }
+}
+#graph_s02g01,
+#graph_s02g01 .subFull {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+}
+
+#line_grey {
+    background-image: url(./images/graphs/line_grey.png);
+    background-position: left center;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 34%;
+    z-index: 20;
+}
+
+#cover {
+    background-image: url(./images/graphs/cover.png);
+    z-index: 99;
+}
+// #line_grey {
+//     background-image: url(./images/graphs/line_grey.png);
+//     background-position: left center;
+//     height: 480px;
+//     left: 0;
+//     top: 0;
+//     width: 410px;
+//     z-index: 20;
+// }
+
+.ring {
+    background-image: url(./images/graphs/ring.png);
+    background-position: center center;
+    background-size: cover;
+    height: 4px;
+    width: 4px;
+    z-index: 9999;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -o-transform-origin: center center;
+    transform-origin: center center;
+    opacity: 1;
+    visibility: visible;
+}
+#r01 {
+    left: 8.917%;
+    top: 47.5%;
+}
+#r02 {
+    left: 19.83%;
+    top: 37.7%;
+}
+#r03 {
+    left: 26.5%;
+    top: 23.75%;
+}
+#r04 {
+    left: 34.42%;
+    top: 55.2%;
+}
+#r05, #r06, #r07, #r08 {
+    left: 45.5%;
+    top: 61.25%;
+}
+
+#marker {
+    background-image: url(./images/graphs/marker.png);
+    height: 17.5%;
+    left: 43.167%;
+    opacity: 0;
+    top: 28.334%;
+    width: 4.667%;
+    z-index: 40;
+}
+#legend {
+    background-image: url(./images/graphs/legend.png);
+    opacity: 0;
+    z-index: 20;
+}
+#bg02 {
+    background-image: url(./images/graphs/bg02.png);
+    opacity: 0;
+    z-index: 10;
+}

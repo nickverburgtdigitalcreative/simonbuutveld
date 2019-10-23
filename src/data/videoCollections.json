@@ -1,0 +1,68 @@
+{
+    "1" : {
+        "id": 1,
+        "beforeImage" : "../videos/architecturalart07_before.jpg",
+        "afterImage" : "../videos/architecturalart07_after.jpg",
+        "video": "../videos/architecturalart07.mp4"
+    },
+    "2" : {
+        "id": 2,
+        "beforeImage" : "../videos/architecturalart08_before.jpg",
+        "afterImage" : "../videos/architecturalart08_after.jpg",
+        "video": "../videos/architecturalart08.mp4"
+    },
+    "3" : {
+        "id": 3,
+        "beforeImage" : "../videos/architecturalart04_before.jpg",
+        "afterImage" : "../videos/architecturalart04_after.jpg",
+        "video": "../videos/architecturalart04.mp4"
+    },
+    "4" : {
+        "id": 4,
+        "beforeImage" : "../videos/architecturalart05_before.jpg",
+        "afterImage" : "../videos/architecturalart05_after.jpg",
+        "video": "../videos/architecturalart05.mp4"
+    },
+    "5" : {
+        "id": 5,
+        "beforeImage" : "../videos/architecturalart09_before.jpg",
+        "afterImage" : "../videos/architecturalart09_after.jpg",
+        "video": "../videos/architecturalart09.mp4"
+    },
+    "6" : {
+        "id": 6,
+        "beforeImage" : "../videos/architecturalart02_before.jpg",
+        "afterImage" : "../videos/architecturalart02_after.jpg",
+        "video": "../videos/architecturalart02.mp4"
+    }, 
+    "7" : {
+        "id": 7,
+        "beforeImage" : "../videos/architecturalart03_before.jpg",
+        "afterImage" : "../videos/architecturalart03_after.jpg",
+        "video": "../videos/architecturalart03.mp4"
+    },
+    "8" : {
+        "id": 8,
+        "beforeImage" : "../videos/architecturalart01_before.jpg",
+        "afterImage" : "../videos/architecturalart01_after.jpg",
+        "video": "../videos/architecturalart01.mp4"
+    },   
+    "9" : {
+        "id": 9,
+        "beforeImage" : "../videos/architecturalart06_before.jpg",
+        "afterImage" : "../videos/architecturalart06_after.jpg",
+        "video": "../videos/architecturalart06.mp4"
+    },
+    "10" : {
+        "id": 10,
+        "beforeImage" : "../videos/architecturalart10_before.jpg",
+        "afterImage" : "../videos/architecturalart10_after.jpg",
+        "video": "../videos/architecturalart10.mp4"
+    },  
+    "11" : {
+        "id": 11,
+        "beforeImage" : "../videos/architecturalart11_before.jpg",
+        "afterImage" : "../videos/architecturalart11_after.jpg",
+        "video": "../videos/architecturalart11.mp4"
+    }
+}

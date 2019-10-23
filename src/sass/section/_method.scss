@@ -1,0 +1,28 @@
+#section-2 {
+    &.show {
+        .txt1,
+        .txt2,
+        .t1,
+        .b1 {
+            opacity: 1;
+        }
+    }
+    .txt1,
+    .txt2,
+    .t1,
+    .b1 {
+        opacity: 0;
+    }
+    .t1 {
+        transition: opacity 1s ease-in-out 0.5s;
+    }
+    .txt1 {
+        transition: opacity 2s ease-in-out 1s;
+    }
+    .txt2 {
+        transition: opacity 2s ease-in-out 1.5s;
+    }
+    .b1 {
+        transition: opacity 1s ease-in-out 2s;
+    }
+}

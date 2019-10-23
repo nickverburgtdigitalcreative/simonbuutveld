@@ -1,0 +1,83 @@
+//
+// Animations
+//
+
+// Opacity Animation
+@-webkit-keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// Ellipsis Animation
+@-webkit-keyframes ellipsis {
+    0% {
+        width: 15px;
+    }
+    50% {
+        width: 0px;
+    }
+    100% {
+        width: 15px;
+    }
+}
+@-moz-keyframes  ellipsis {
+    0% {
+        width: 15px;
+    }
+    50% {
+        width: 0px;
+    }
+    100% {
+        width: 15px;
+    }
+}
+@-o-keyframes ellipsis {
+    0% {
+        width: 15px;
+    }
+    50% {
+        width: 0px;
+    }
+    100% {
+        width: 15px;
+    }
+}
+@keyframes ellipsis {
+    0% {
+        width: 15px;
+    }
+    50% {
+        width: 0px;
+    }
+    100% {
+        width: 15px;
+    }
+}

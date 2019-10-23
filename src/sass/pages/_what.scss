@@ -1,0 +1,368 @@
+// Quadrant Graph
+#section3_graph1 {
+    padding-bottom: 6em;
+
+    .graph {
+        width: calc(100% - 138px);
+        max-width: 800px;
+    }
+
+    #graph_s03g01,
+    #graph_s03g01 .subFull {
+        width: 100%;
+        height: 100%;
+    }
+
+    #graph_s03g01 {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+
+        div {
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+        }
+    }
+
+    .dots {
+        opacity: 0;
+        z-index: 10;
+    }
+
+    #cross {
+        background-image: url(./images/graphs/cross.png);
+        z-index: 30;
+    }
+
+    #dot01 {
+        background-image: url(./images/graphs/dot01.png);
+    }
+    #dot02 {
+        background-image: url(./images/graphs/dot02.png);
+    }
+    #dot03 {
+        background-image: url(./images/graphs/dot03.png);
+    }
+    #dot04 {
+        background-image: url(./images/graphs/dot04.png);
+    }
+    #dot05 {
+        background-image: url(./images/graphs/dot05.png);
+    }
+    #dot06 {
+        background-image: url(./images/graphs/dot06.png);
+    }
+    #dot07 {
+        background-image: url(./images/graphs/dot07.png);
+    }
+    #dot08 {
+        background-image: url(./images/graphs/dot08.png);
+    }
+    .quarters {
+        opacity: 0;
+        z-index: 20;
+    }
+    #quarter01 {
+        background-image: url(./images/graphs/quarter01.png);
+    }
+    #quarter02 {
+        background-image: url(./images/graphs/quarter02.png);
+    }
+    #quarter03 {
+        background-image: url(./images/graphs/quarter03.png);
+    }
+    #quarter04 {
+        background-image: url(./images/graphs/quarter04.png);
+    }
+}
+
+
+//  Donuts Graph
+#section3_graph2{
+    position: relative;
+}
+#graph_s03g02 {
+    display: block;
+    position: relative;
+    margin: 0 auto 6em;
+
+    @media(min-width: 1090px){
+        margin: -4em auto -4em;
+    }
+
+    div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+    }
+}
+#graph_s03g02,
+#graph_s03g02 .subFull {
+    width: 100%;
+    height: 100%;
+}
+#donutBg {
+    z-index: 1;
+}
+#donut1 text,
+#donut2 text {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+.donut {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#donut1,
+#donut2 {
+    &:before {
+        display: block;
+        clear: both;
+        position: absolute;
+        font-weight: bold;
+        font-size: 0.75em;
+        text-align: center;
+        width: 100px;
+    }
+    
+    .placeholder_donut{ 
+        position: absolute; z-index: -1; 
+    }
+}
+
+#donut1 {
+    &.show{
+        &:before{
+            opacity: 1;
+        }
+    }
+
+    .placeholder_donut{ 
+        .color0{
+            fill: #e7e3e3;
+        }
+    }
+}
+#donut2 {
+    &.show{
+        &:before{
+            opacity: 1;
+        }
+    }
+
+    .placeholder_donut{ 
+        .color0{
+            fill: #fde7e6;
+        }
+    }
+}
+
+.donut svg {
+    overflow: inherit;
+}
+#donut1 {
+    width: 370px;
+    height: 370px;
+    z-index: 5;
+}
+#donut2 {
+    width: 310px;
+    height: 310px;
+    z-index: 5;
+}
+#donutBg1,
+#donutBg2 {
+    z-index: 1;
+}
+
+#donutBg {
+    display: flex;
+    flex-direction: row-reverse;
+    // align-content: space-around;
+    justify-content: space-between;
+    // position: absolute;
+    position: relative;
+    bottom: 90px;
+    // width: 90%;
+    width: 100%;
+
+    @media(min-width: 768px){
+        bottom: 40px;
+    }
+
+    @media(min-width: 1090px){
+        bottom: 220px;
+    }
+
+    #donutBg1, #donutBg2{
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .red{
+    
+        color: #f03f36;
+    }
+    div{
+        font-weight: bold;
+        font-size: 0.75em;
+        text-align: center;
+        width: 100%;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        flex:1;
+        flex-direction: column;
+
+        p{
+            margin: 0 auto;
+            width: 100px;
+        }
+    }
+}
+
+#donut1 path.color0,
+#donutBg1 path.color0 #donut1 text {
+    fill: #191919;
+}
+#donut1 path.color1,
+#donutBg1 path.color1 {
+    fill: #e7e3e3;
+}
+#donut2 path.color0,
+#donutBg2 path.color0,
+#donut2 text {
+    fill: #f03f36;
+}
+#donut2 path.color1,
+#donutBg2 path.color1 {
+    fill: #fde7e6;
+}
+
+#donut1 text {
+    -webkit-transform: translate(240px, -1em) !important;
+    -moz-transform: translate(240px, -1em) !important;
+    -ms-transform: translate(240px, -1em) !important;
+    -o-transform: translate(240px, -1em) !important;
+    transform: translate(240px, -1em) !important;
+}
+#donut2 text {
+    -webkit-transform: translate(-240px, -1em) !important;
+    -moz-transform: translate(-240px, -1em) !important;
+    -ms-transform: translate(-240px, -1em) !important;
+    -o-transform: translate(-240px, -1em) !important;
+    transform: translate(-240px, -1em) !important;
+}
+
+#section3_graph3{
+    .graph{
+        max-width: 800px;
+    }
+}
+
+
+// Inspiration
+#sec3_inspiration {
+    margin: 0 auto 10em;
+    width: 50%;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    img {
+        float: left;
+        margin: 3em 3em 3em 0;
+        shape-outside: circle(50%) margin-box;
+    }
+
+    p {
+        color: #191919;
+        font-family: "EB Garamond", serif;
+        font-size: 1.2em;
+        padding-bottom: 1.5em;
+
+        &:nth-child(3) {
+            color: #f03f36;
+            font-family: "EB Garamond", serif;
+            font-size: 1.6em;
+        }
+
+        &:nth-child(6) {
+            font-family: "Lato", sans-serif;
+            font-size: 1em;
+            padding-bottom: 0;
+        }
+    }
+}
+@media all and (max-width: 900px) {
+    #sec3_inspiration {
+        width: 66%;
+    }
+}
+
+@media all and (max-width: 740px) {
+    #subpage #donut1 text {
+        transform: translate(60px, -1em) !important;
+    }
+    #donut1:before {
+        transform: translate(7%, 822%) !important;
+    }
+    #subpage #donut2 text {
+        transform: translate(-60px, -1em) !important;
+    }
+    #donut2:before {
+        transform: translate(-112%, 340%) !important;
+    }
+}
+@media all and (max-width: 600px) {
+    #donut1:before {
+        transform: translate(7%, 742%) !important;
+    }
+    #donut2:before {
+        transform: translate(-112%, 311%) !important;
+    }
+}
+
+// Circles Graph
+#graph_s03g03 {
+    display: block;
+    position: relative;
+    margin: 0 auto 4em;
+
+    @media(min-width: 900px){
+        margin: -2em auto 0;
+    }
+
+    div {
+        background-repeat: no-repeat;
+        // background-size: cover;
+        background-size: contain;
+        position: absolute;
+    }
+}
+#graph_s03g03,
+#graph_s03g03 .subFull {
+    width: 100%;
+    height: 100%;
+}
+
+#rings {
+    background-image: url(./images/graphs/rings.png);
+    z-index: 10;
+}
+#ring {
+    background-image: url(./images/graphs/ring2.png);
+    opacity: 0;
+    z-index: 20;
+}

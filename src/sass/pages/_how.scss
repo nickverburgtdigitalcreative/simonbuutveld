@@ -1,0 +1,79 @@
+#s5_robots {
+    div {
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+#s5_robots_bg {
+    width: 100%;
+    z-index: 1;
+}
+#s5_robots_redL,
+#s5_robots_redR {
+    opacity: 0;
+    width: 50%;
+    z-index: 2;
+}
+#s5_robots_redL {
+    left: 0;
+}
+#s5_robots_redR {
+    right: 0;
+}
+
+#section5_art{
+    max-width: 100%;
+}
+
+#collage {
+    background-color: #191919;
+    margin-bottom: 10em;
+    position: relative;
+    width: 100%;
+    z-index: 20;
+}
+#collage:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+#collage img {
+    float: left;
+}
+#collage img:nth-child(1) {
+    width: 27.75%;
+}
+#collage img:nth-child(2) {
+    width: 39%;
+}
+#collage img:nth-child(3) {
+    float: right;
+    width: 33.25%;
+}
+#collage img:nth-child(4) {
+    width: 39.75%;
+}
+#collage img:nth-child(5) {
+    width: 27%;
+}
+#collage img:nth-child(6) {
+    width: 33.25%;
+}
+.ani-sat-box .ani-sat-item {
+    filter: grayscale(1);
+    transition: 0.5s filter;
+}
+.ani-sat-box .ani-sat-item:hover {
+    filter: grayscale(0);
+}
+
+.graph_narrow {
+    margin: 0 auto;
+    max-width: 800px;
+    width: calc(100% - 46px);
+}

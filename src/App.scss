@@ -1,0 +1,28 @@
+@import './sass/global';
+@import './sass/animations';
+@import './sass/preloader';
+@import './sass/header';
+@import './sass/menu';
+@import './sass/section';
+@import './sass/videos';
+@import './sass/slick';
+@import './sass/pages';
+
+// Pages
+@import './sass/pages/who';
+@import './sass/pages/what';
+@import './sass/pages/where';
+@import './sass/pages/why';
+@import './sass/pages/how';
+// Pages components
+@import './sass/pages/scrollbar';
+
+// Components
+@import './sass/section/introduction';
+@import './sass/section/understanding';
+@import './sass/section/method';
+@import './sass/section/contact';
+
+
+@import './sass/responsive';
+@import './sass/modal';

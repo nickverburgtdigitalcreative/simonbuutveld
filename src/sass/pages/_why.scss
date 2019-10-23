@@ -1,0 +1,63 @@
+#s4_cars,
+#s4_house,
+#s5_robots {
+    margin-bottom: 8em;
+    position: relative;
+    width: 100%;
+}
+
+#s4_cars {
+    div {
+        background-repeat: no-repeat;
+        position: absolute;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    #s4_cars_bg {
+        width: 100%;
+        z-index: 1;
+    }
+
+    #s4_cars_redL,
+    #s4_cars_redR {
+        opacity: 0;
+        width: 50%;
+        z-index: 2;
+    }
+
+    #s4_cars_redL {
+        left: 0;
+    }
+    #s4_cars_redR {
+        right: 0;
+    }
+}
+
+
+
+#s4_house{
+    div {
+        background-repeat: no-repeat;
+        position: absolute;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    #s4_house_bg {
+        width: 100%;
+        z-index: 1;
+    }
+    #s4_house_red {
+        opacity: 0;
+        width: 100%;
+        z-index: 2;
+    }
+} 
+
+

@@ -1,0 +1,73 @@
+header {
+    left: 0;
+    position: fixed;
+    transform: translate3d(0,-100%,0);
+    z-index: 999999;
+    transition: all, 1s;
+
+    &.start_animation{
+        transform: translate3d(0,0,0);
+    }
+}
+
+#logo {
+    background-color: #f03f36;
+    background-image: url(./images/logo_header.png);
+    background-size: cover;
+    height: 46px;
+    width: 46px;
+
+    a {
+        display: block;
+        height: 100%;
+    }
+}
+
+#info {
+    margin-top: 10px;
+
+    .contact {
+        display: block;
+        line-height: 2em;
+        margin-left: 10px;
+
+        a {
+            color: #f03f36;
+            text-decoration: none;
+        }
+
+        i {
+            color: #f03f36;
+            line-height: 2em;
+            text-align: center;
+            width: 26px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .tog_p, .tog_e {
+            color: #f03f36;
+            display: inline-block;
+            line-height: 2em;
+            overflow: hidden;
+            vertical-align: top;
+            white-space: nowrap;
+            width: 0;
+            transition: width .5s ease-in-out;
+        }
+        .cont_open { width: 20em; }
+    }
+}
+
+
+
+.scroll-y.scroll-scrolly_visible{
+    opacity: 0;
+    transition: opacity, 2s;
+
+    &.show{
+        opacity: 1;
+    }
+}
