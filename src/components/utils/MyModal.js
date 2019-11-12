@@ -21,11 +21,12 @@ class MyModal extends PureComponent {
         once: false,
     }
     componentDidMount() {
-
+        if( !window.sessionStorage.getItem("show") ) {
+            window.sessionStorage.setItem("show", "true");
+        }
         setTimeout(() => {
             this.openOrCloseModal()
         }, 5000);
-
 
         window.addEventListener('resize', () => {
             this.openOrCloseModal()
@@ -37,7 +38,9 @@ class MyModal extends PureComponent {
     }
 
     openOrCloseModal = () => {
-        if (window.orientation === undefined){
+        if ( window.orientation === undefined ||
+            window.sessionStorage.getItem("show") === "false"
+        ){
             return
         }
 
@@ -60,6 +63,8 @@ class MyModal extends PureComponent {
     openModal = () => {
         this.setState({
             showModal: true
+        }, () => {
+            window.sessionStorage.setItem("show", "false");
         })
     }
 
@@ -72,18 +77,23 @@ class MyModal extends PureComponent {
 
 
     render() {
-        return (
-            <Modal
-                style={customStyles}
-                isOpen={this.state.showModal}
-                onRequestClose={this.closeModal}
-                className='my_modal'
-                overlayClassName='my_modal_overlay'
-            >
-                <p><strong>Hello. </strong>For the full experience this site is best viewed on desktop. On mobile it is better with your device rotated to landscape.</p>
-                <button onClick={this.closeModal}></button>
-            </Modal>
-        )
+        if( window.sessionStorage.getItem("show") === "false") {
+            return (
+                <Modal
+                    style={customStyles}
+                    isOpen={this.state.showModal}
+                    onRequestClose={this.closeModal}
+                    className='my_modal'
+                    overlayClassName='my_modal_overlay'
+                >
+                    <p><strong>Hello. </strong>For the full experience this site is best viewed on desktop. On mobile it is better with your device rotated to landscape.</p>
+                    <button onClick={this.closeModal}></button>
+                </Modal>
+            )
+        } else {
+            return false
+        }
+
     }
 }
 

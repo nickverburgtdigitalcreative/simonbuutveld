@@ -357,7 +357,7 @@ export function updateCurrentSectionClass(current) {
     if ('undefined' !== typeof(current)){
         setTimeout(() => {
             document.getElementById(currentSection).classList.add('show')
-        }, 1000);
+        }, 250);
     }
 }
 
@@ -454,7 +454,7 @@ export function homepageAnimation() {
     
     const mobileHomeSections = document.getElementsByClassName('section_mobile')
 
-    if (mobileHomeSections){
+    if (mobileHomeSections.length > 0){
         window.scrollTo({
             top: 0,
             left: 0,

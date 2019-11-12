@@ -11,6 +11,15 @@ import videoCollections from '../../data/videoCollections'
 
 class HomeMobile extends Component {
 
+    componentDidMount() {
+        const mobileHomeSections = document.getElementsByClassName('section_mobile')
+        Array.from(mobileHomeSections).forEach((elem) => {
+            if( !elem.classList.contains('show') ) {
+                elem.classList.add('show')
+            }
+        });
+    }
+
     restartVideo(id) {
         const video = document.getElementById(id)
         const backgroundImage = document.getElementsByClassName(id)[0]
