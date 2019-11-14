@@ -77,7 +77,9 @@ class MyModal extends PureComponent {
 
 
     render() {
-        if( window.sessionStorage.getItem("show") === "false") {
+        console.log(window.sessionStorage.getItem("show"))
+        if( window.sessionStorage.getItem("show") === "true") {
+            console.log(window.sessionStorage.getItem("show"))
             return (
                 <Modal
                     style={customStyles}

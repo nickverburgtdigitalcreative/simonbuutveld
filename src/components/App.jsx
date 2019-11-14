@@ -4,7 +4,8 @@ import '../App.scss'
 
 import { 
     viewportWidth, 
-    homepageAnimation 
+    homepageAnimation,
+    checkOrientation
 } from './utils'
 
 import PreLoader from './PreLoader'
@@ -24,21 +25,30 @@ class App extends Component {
         this.isMobileDevice()
     }
     componentDidMount(){
-        document.querySelectorAll(".content").forEach((elem) => {
-            console.log(window.outerHeight);
-            elem.style.height = window.outerHeight + "px";
-        });
+        const oneh = () => {
+            document.querySelectorAll(".content").forEach((elem) => {
+                elem.style.height = window.outerHeight + "px";
+            });
+            document.querySelectorAll(".video").forEach((elem) => {
+                elem.style.height = window.outerHeight + "px";
+            });
+
+        };
+        oneh();
         setTimeout(() => {
             homepageAnimation()
         }, 200);
 
         window.addEventListener('resize', this.isMobileDevice)
         window.addEventListener('orientationchange', homepageAnimation)
+        window.addEventListener('resize', oneh);
+        window.addEventListener('orientationchange', oneh)
     }
 
     isMobileDevice = () => {
         if (viewportWidth() <= 900){
             document.body.classList.add('isMobile')
+            checkOrientation()
             this.setState({
                 isMobile: true,
             })
