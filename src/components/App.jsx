@@ -23,7 +23,11 @@ class App extends Component {
     componentWillMount(){
         this.isMobileDevice()
     }
-    componentDidMount(){  
+    componentDidMount(){
+        document.querySelectorAll(".content").forEach((elem) => {
+            console.log(window.outerHeight);
+            elem.style.height = window.outerHeight + "px";
+        });
         setTimeout(() => {
             homepageAnimation()
         }, 200);
