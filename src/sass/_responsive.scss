@@ -387,21 +387,20 @@
     #graph_s03g02, #graph_s03g02 .subFull { width: 75%; } 
     .portfolio div { width: 33.3%; }
 
-    section {
-        .top, .bottom {
-            font-size: 0.9rem !important;
-        }
-        .top::before, .bottom::after {
-            height: 1em;
-        }
-        .top::before {
-            margin-bottom: 0.5em;
-        }
-        .bottom::after {
-            margin-top: 0.5em;
-        }
-
-    }
+    //section {
+    //    .top, .bottom {
+    //        font-size: 0.9rem !important;
+    //    }
+    //    .top::before, .bottom::after {
+    //        height: 1em;
+    //    }
+    //    .top::before {
+    //        margin-bottom: 0.5em;
+    //    }
+    //    .bottom::after {
+    //        margin-top: 0.5em;
+    //    }
+    //}
 }
 @media all and (max-width: 560px) {
     .col {

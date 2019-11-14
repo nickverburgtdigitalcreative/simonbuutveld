@@ -27,10 +27,10 @@ class App extends Component {
     componentDidMount(){
         const oneh = () => {
             document.querySelectorAll(".content").forEach((elem) => {
-                elem.style.height = window.outerHeight + "px";
+                elem.style.height = window.innerHeight + "px";
             });
             document.querySelectorAll(".video").forEach((elem) => {
-                elem.style.height = window.outerHeight + "px";
+                elem.style.height = window.innerHeight + "px";
             });
 
         };
