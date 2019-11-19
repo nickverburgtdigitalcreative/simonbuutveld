@@ -338,7 +338,7 @@
             padding: 0 20px;
         }
         .f1_txt2{
-            font-size: 2.3em;
+            font-size: 2em;
         }
     }
     #section-1{
@@ -453,4 +453,24 @@
     #s4_cars, #s4_house, #s5_robots, #collage,
     .portfolio { max-width: 100% !important; width: 100% !important; }
     .portfolio div { width: 50%; }
+}
+
+@media all and (max-height: 400px) {
+    section {
+        .top, .bottom {
+            font-size: 0.9rem !important;
+        }
+
+        .top::before, .bottom::after {
+            height: 1em !important;
+        }
+
+        .top::before {
+            margin-bottom: 0.5em !important;
+        }
+
+        .bottom::after {
+            margin-top: 0.5em !important;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 /*************** SCROLLBAR BASE CSS ***************/
 body{
     &.sub{
-        overflow: hidden;
+        overflow: visible;
         background-color: rgba(0,0,0,0.9);
     }
 }

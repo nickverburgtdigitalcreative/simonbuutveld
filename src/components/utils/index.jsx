@@ -24,7 +24,7 @@ function checkOrientation(){
     if (window.orientation === undefined){
         return
     }
-    if (window.orientation === 0) {
+    if (window.orientation === 0 || window.innerHeight > window.innerWidth) {
         document.body.classList.remove('landscape')
         document.body.classList.add('portrait')
     } else {
@@ -357,7 +357,7 @@ export function updateCurrentSectionClass(current) {
     if ('undefined' !== typeof(current)){
         setTimeout(() => {
             document.getElementById(currentSection).classList.add('show')
-        }, 1000);
+        }, 250);
     }
 }
 
