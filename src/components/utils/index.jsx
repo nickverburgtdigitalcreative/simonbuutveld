@@ -24,7 +24,7 @@ function checkOrientation(){
     if (window.orientation === undefined){
         return
     }
-    if (window.orientation === 0) {
+    if (window.orientation === 0 || window.innerHeight > window.innerWidth) {
         document.body.classList.remove('landscape')
         document.body.classList.add('portrait')
     } else {
