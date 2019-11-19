@@ -19,6 +19,7 @@ class App extends Component {
 
     state = {
         isMobile: false,
+        wHeight: window.innerHeight
     }
 
     componentWillMount(){
@@ -26,13 +27,20 @@ class App extends Component {
     }
     componentDidMount(){
         const oneh = () => {
+            if (this.state.wHeight === window.innerHeight) {
+                return;
+            }
+
             document.querySelectorAll(".content").forEach((elem) => {
                 elem.style.height = window.innerHeight + "px";
             });
             document.querySelectorAll(".video").forEach((elem) => {
                 elem.style.height = window.innerHeight + "px";
             });
+
+            this.setState({wHeight: window.innerHeight})
         };
+
         oneh();
         setTimeout(() => {
             homepageAnimation()
@@ -40,7 +48,7 @@ class App extends Component {
 
         window.addEventListener('resize', this.isMobileDevice)
         window.addEventListener('orientationchange', homepageAnimation)
-        //window.addEventListener('resize', oneh);
+        window.addEventListener('resize', oneh);
         window.addEventListener('orientationchange', oneh)
     }
 
