@@ -40,8 +40,8 @@ class App extends Component {
 
         window.addEventListener('resize', this.isMobileDevice)
         window.addEventListener('orientationchange', homepageAnimation)
-        window.addEventListener('resize', oneh);
-        //window.addEventListener('orientationchange', oneh)
+        //window.addEventListener('resize', oneh);
+        window.addEventListener('orientationchange', oneh)
     }
 
     isMobileDevice = () => {
