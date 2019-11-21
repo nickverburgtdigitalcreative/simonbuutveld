@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react'
+import ReactDOM from 'react-dom'
 import Top from './utils/Top'
+
+import playIcon from '../images/PlayIcon.svg'
 
 class VideosMobile extends PureComponent {
 
@@ -42,7 +45,7 @@ class VideosMobile extends PureComponent {
         const currentVideo = document.getElementById('video_' + video.id)
         const backgroundImage = document.getElementsByClassName('video_' + video.id)[0]
 
-        currentVideo.removeAttribute('controls')
+        //currentVideo.removeAttribute('controls')
 
         if (backgroundImage) {
             currentVideo.classList.add('hide')
@@ -51,19 +54,32 @@ class VideosMobile extends PureComponent {
 
     }
 
+    togglePlayState = () => {
+        const node = ReactDOM.findDOMNode(this);
+        let video = null;
+
+        if (node instanceof HTMLElement) {
+            video = node.querySelector("#video_" + this.props.video.id);
+        }
+
+        if (video && !video.classList.contains("playing")) {
+            video.play();
+            this.props.callback("#video-section_" + this.props.video.id);
+        }
+    }
+
     render() {
         const { video } = this.props
         const afterImage = 'url(' + video.afterImage + ')'
-
+        const iconClass = 'play-icon';
         return (
 
-            <section className="video">
+            <section className="video" id={`video-section_${video.id}`}>
                 <Top t1='The architectural art' />
+                <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
                     id={`video_${video.id}`}
                     className='art_videos lazy'
-                    controls
-                    controlsList="nodownload nofullscreen noremoteplayback"
                     playsInline
                     preload='none'
                     poster={video.beforeImage}

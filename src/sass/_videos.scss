@@ -47,6 +47,25 @@ section{
                 background-position: center;
                 background-size: cover;
             }
+            .play-icon {
+                position: absolute;
+                bottom: 50%;
+                right: 50%;
+                transform: translate(50%, 50%);
+                max-width: 40px;
+                max-height: 40px;
+                z-index: 9999;
+
+                opacity: 1;
+                transition: opacity 0.5s ease-in-out;
+            }
+        }
+
+        .video.playing {
+            .play-icon {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
         }
     }
 }
