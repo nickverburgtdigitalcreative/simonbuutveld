@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Top from './utils/Top'
 
 import playIcon from '../images/PlayIcon.svg'
+import Bottom from "./utils/Bottom";
 
 class VideosMobile extends PureComponent {
 
@@ -45,8 +46,6 @@ class VideosMobile extends PureComponent {
         const currentVideo = document.getElementById('video_' + video.id)
         const backgroundImage = document.getElementsByClassName('video_' + video.id)[0]
 
-        //currentVideo.removeAttribute('controls')
-
         if (backgroundImage) {
             currentVideo.classList.add('hide')
             backgroundImage.classList.add('show')
@@ -76,6 +75,7 @@ class VideosMobile extends PureComponent {
 
             <section className="video" id={`video-section_${video.id}`}>
                 <Top t1='The architectural art' />
+                <Bottom text='Please scroll down for more' />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
                     id={`video_${video.id}`}

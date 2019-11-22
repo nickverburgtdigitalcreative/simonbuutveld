@@ -1,12 +1,9 @@
 .section{
     overflow: hidden !important;
     position: relative;
-}
 
-.section{
     &.video{
-        .b1,
-        .t1{
+        .b1, .t1{
             opacity: 0;
         }
         .t1{
@@ -17,13 +14,22 @@
         }
 
         &.show{
-            .b1,
-            .t1{
+            .b1, .t1{
                 opacity: 1;
             }
         }
     }
-    
+}
+
+.section_mobile {
+    @extend .section;
+
+    section.video .bottom .b1 {
+        opacity: 0;
+    }
+    section.video.playing .bottom .b1 {
+        opacity: 1;
+    }
 }
 
 section {
