@@ -1,15 +1,12 @@
 section{
     &.video{
+        min-height: 100vh;
         min-height: -webkit-fill-available;
-        height: auto;
 
         video{
             width: 100%;
             height: 100%;
-            position: absolute;
-            bottom: 50%;
-            right: 50%;
-            transform: translate(50%, 50%);
+            object-fit: cover;
         }
 
         &::before {
