@@ -24,9 +24,9 @@
 .section_mobile {
     @extend .section;
 
-    section.video .bottom .b1 {
-        //opacity: 0;
-    }
+    min-width: 100%;
+    min-height: 100%;
+
     section.video.show .bottom .b1 {
         opacity: 1;
     }
@@ -40,10 +40,10 @@ section {
     display: flex;
 
     .content {
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
         position: relative;
-        width: 100%;
         display: flex;
 
             &::before {
