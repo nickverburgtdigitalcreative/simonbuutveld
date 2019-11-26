@@ -20,7 +20,7 @@ class HomeMobile extends Component {
 
     componentDidMount() {
          const me = this;
-        document.addEventListener('resize', function() {
+        window.addEventListener('resize', function() {
             me.setState({viewHeight: window.innerHeight});
         })
     }
