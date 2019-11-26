@@ -4,7 +4,7 @@
 
     &.video{
         .b1, .t1{
-            opacity: 1;
+            opacity: 0;
         }
         .t1{
             transition: opacity .5s ease-in-out .5s;
@@ -25,12 +25,13 @@
     @extend .section;
 
     section.video .bottom .b1 {
-        opacity: 1;
+        //opacity: 0;
     }
-    section.video.playing .bottom .b1 {
+    section.video.show .bottom .b1 {
         opacity: 1;
     }
 }
+
 
 section {
     background-color: #fcf9f9;
