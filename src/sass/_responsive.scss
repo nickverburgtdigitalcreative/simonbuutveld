@@ -120,6 +120,7 @@
 }
 @media all and (max-width: 900px) {
     section{
+        min-height: 100vh;
         min-height: -webkit-fill-available;
     }
     .hover-text {
