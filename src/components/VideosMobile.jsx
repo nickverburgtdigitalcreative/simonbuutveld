@@ -7,12 +7,24 @@ import Bottom from "./utils/Bottom";
 
 class VideosMobile extends PureComponent {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            height: window.innerHeight
+        }
+    }
+
     componentDidMount() {
         const { video } = this.props
         const endedVideo = document.getElementById('video_' + video.id)
         endedVideo.addEventListener('ended', this.videoEnded)
 
         document.addEventListener("DOMContentLoaded", this.lazyLoadVideos)
+
+        const me = this;
+        window.addEventListener('resize', function() {
+            me.setState({ height: window.innerHeight })
+        })
     }
 
     lazyLoadVideos = () => {
@@ -69,11 +81,13 @@ class VideosMobile extends PureComponent {
 
     render() {
         const { video } = this.props
+        const style = this.state
         const afterImage = 'url(' + video.afterImage + ')'
         const iconClass = 'play-icon';
+
         return (
 
-            <div className="video" id={`video-section_${video.id}`}>
+            <div className="video" id={`video-section_${video.id}`} style={style}>
                 <Top t1='The architectural art' />
                 <Bottom text='Please scroll down for more' />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
