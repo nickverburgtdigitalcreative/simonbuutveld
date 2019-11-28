@@ -30,7 +30,6 @@ class VideosMobile extends PureComponent {
 
         this.setState({curHeight: Math.max(this.state.height, window.innerHeight) })
         window.addEventListener('resize', () => {
-
             if(this.getOrientation() !== this.state.orientation) {
                 this.setState({
                     height: window.innerHeight,
@@ -113,7 +112,7 @@ class VideosMobile extends PureComponent {
         return (
 
             <div className="video" id={`video-section_${video.id}`} style={style}>
-                <Top t1={this.state.orientation} />
+                <Top t1={this.state.height + "px"} />
                 <Bottom text={window.innerHeight + "px"} />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
