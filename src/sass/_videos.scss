@@ -1,7 +1,8 @@
-section{
+div{
     &.video{
         min-height: 100vh;
         min-height: -webkit-fill-available;
+        height: 100%;
 
         video{
             width: 100%;
@@ -41,7 +42,7 @@ section{
 
 
     div.section_mobile{
-        section.video{
+        div.video{
             .after{
                 z-index: -1;
                 &.show{

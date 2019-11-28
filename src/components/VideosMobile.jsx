@@ -73,7 +73,7 @@ class VideosMobile extends PureComponent {
         const iconClass = 'play-icon';
         return (
 
-            <section className="video" id={`video-section_${video.id}`}>
+            <div className="video" id={`video-section_${video.id}`}>
                 <Top t1='The architectural art' />
                 <Bottom text='Please scroll down for more' />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
@@ -91,7 +91,7 @@ class VideosMobile extends PureComponent {
                     style={{ backgroundImage: afterImage }}
                 ></div>
 
-            </section>
+            </div>
 
         )
     }
