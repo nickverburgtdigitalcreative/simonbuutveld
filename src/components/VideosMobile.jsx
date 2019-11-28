@@ -81,7 +81,9 @@ class VideosMobile extends PureComponent {
 
     render() {
         const { video } = this.props
-        const style = this.state
+        const style = {
+            height: window.innerHeight
+        }
         const afterImage = 'url(' + video.afterImage + ')'
         const iconClass = 'play-icon';
 
@@ -89,7 +91,7 @@ class VideosMobile extends PureComponent {
 
             <div className="video" id={`video-section_${video.id}`} style={style}>
                 <Top t1='The architectural art' />
-                <Bottom text='Please scroll down for more' />
+                <Bottom text={window.innerHeight + "px"} />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
                     id={`video_${video.id}`}
