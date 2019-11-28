@@ -5,12 +5,19 @@ import Top from './utils/Top'
 import playIcon from '../images/PlayIcon.svg'
 import Bottom from "./utils/Bottom";
 
+const ORIENTATION = {
+    PORTRAIT: 0,
+    LANDSCAPE: 1,
+}
+Object.freeze(ORIENTATION)
+
 class VideosMobile extends PureComponent {
 
     constructor(props) {
         super(props)
         this.state = {
-            height: window.innerHeight
+            height: window.innerHeight,
+            orientation: this.getOrientation()
         }
     }
 
@@ -21,10 +28,26 @@ class VideosMobile extends PureComponent {
 
         document.addEventListener("DOMContentLoaded", this.lazyLoadVideos)
 
-        const me = this;
-        window.addEventListener('resize', function() {
-            me.setState({ height: window.innerHeight })
+        this.setState({curHeight: Math.max(this.state.height, window.innerHeight) })
+        window.addEventListener('resize', () => {
+
+            if(this.getOrientation() !== this.state.orientation) {
+                this.setState({
+                    height: window.innerHeight,
+                    orientation: this.getOrientation()
+                })
+            } else {
+                this.setState({height: Math.max(this.state.height, window.innerHeight) })
+            }
         })
+    }
+
+    getOrientation = () => {
+        if (window.outerHeight > window.outerWidth) {
+            return ORIENTATION.PORTRAIT
+        } else {
+            return ORIENTATION.LANDSCAPE
+        }
     }
 
     lazyLoadVideos = () => {
@@ -82,7 +105,7 @@ class VideosMobile extends PureComponent {
     render() {
         const { video } = this.props
         const style = {
-            height: window.innerHeight
+            height: this.state.height
         }
         const afterImage = 'url(' + video.afterImage + ')'
         const iconClass = 'play-icon';
@@ -90,7 +113,7 @@ class VideosMobile extends PureComponent {
         return (
 
             <div className="video" id={`video-section_${video.id}`} style={style}>
-                <Top t1='The architectural art' />
+                <Top t1={this.state.orientation} />
                 <Bottom text={window.innerHeight + "px"} />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
