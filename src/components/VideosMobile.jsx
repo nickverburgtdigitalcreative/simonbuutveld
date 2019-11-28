@@ -16,7 +16,7 @@ class VideosMobile extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
-            height: window.innerHeight,
+            height: window.outerHeight,
             orientation: this.getOrientation()
         }
     }
@@ -28,15 +28,15 @@ class VideosMobile extends PureComponent {
 
         document.addEventListener("DOMContentLoaded", this.lazyLoadVideos)
 
-        this.setState({curHeight: Math.max(this.state.height, window.innerHeight) })
+        this.setState({curHeight: Math.max(this.state.height, window.outerHeight) })
         window.addEventListener('resize', () => {
             if(this.getOrientation() !== this.state.orientation) {
                 this.setState({
-                    height: window.innerHeight,
+                    height: window.outerHeight,
                     orientation: this.getOrientation()
                 })
             } else {
-                this.setState({height: Math.max(this.state.height, window.innerHeight) })
+                this.setState({height: Math.max(this.state.height, window.outerHeight) })
             }
         })
     }
@@ -113,7 +113,7 @@ class VideosMobile extends PureComponent {
 
             <div className="video" id={`video-section_${video.id}`} style={style}>
                 <Top t1={this.state.height + "px"} />
-                <Bottom text={window.innerHeight + "px"} />
+                <Bottom text={window.outerHeight + "px"} />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
                     id={`video_${video.id}`}
