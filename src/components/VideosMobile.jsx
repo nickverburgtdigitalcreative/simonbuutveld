@@ -13,14 +13,6 @@ Object.freeze(ORIENTATION)
 
 class VideosMobile extends PureComponent {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            height: window.outerHeight,
-            orientation: this.getOrientation()
-        }
-    }
-
     componentDidMount() {
         const { video } = this.props
         const endedVideo = document.getElementById('video_' + video.id)
@@ -28,25 +20,6 @@ class VideosMobile extends PureComponent {
 
         document.addEventListener("DOMContentLoaded", this.lazyLoadVideos)
 
-        this.setState({curHeight: Math.max(this.state.height, window.outerHeight) })
-        window.addEventListener('resize', () => {
-            if(this.getOrientation() !== this.state.orientation) {
-                this.setState({
-                    height: window.outerHeight,
-                    orientation: this.getOrientation()
-                })
-            } else {
-                this.setState({height: Math.max(this.state.height, window.outerHeight) })
-            }
-        })
-    }
-
-    getOrientation = () => {
-        if (window.outerHeight > window.outerWidth) {
-            return ORIENTATION.PORTRAIT
-        } else {
-            return ORIENTATION.LANDSCAPE
-        }
     }
 
     lazyLoadVideos = () => {
@@ -103,15 +76,12 @@ class VideosMobile extends PureComponent {
 
     render() {
         const { video } = this.props
-        const style = {
-            height: this.state.height
-        }
         const afterImage = 'url(' + video.afterImage + ')'
         const iconClass = 'play-icon';
 
         return (
 
-            <div className="video" id={`video-section_${video.id}`} style={style}>
+            <div className="video" id={`video-section_${video.id}`}>
                 <Top t1={this.state.height + "px"} />
                 <Bottom text={window.outerHeight + "px"} />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
