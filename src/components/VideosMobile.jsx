@@ -5,12 +5,6 @@ import Top from './utils/Top'
 import playIcon from '../images/PlayIcon.svg'
 import Bottom from "./utils/Bottom";
 
-const ORIENTATION = {
-    PORTRAIT: 0,
-    LANDSCAPE: 1,
-}
-Object.freeze(ORIENTATION)
-
 class VideosMobile extends PureComponent {
 
     componentDidMount() {
@@ -19,7 +13,6 @@ class VideosMobile extends PureComponent {
         endedVideo.addEventListener('ended', this.videoEnded)
 
         document.addEventListener("DOMContentLoaded", this.lazyLoadVideos)
-
     }
 
     lazyLoadVideos = () => {
@@ -78,12 +71,11 @@ class VideosMobile extends PureComponent {
         const { video } = this.props
         const afterImage = 'url(' + video.afterImage + ')'
         const iconClass = 'play-icon';
-
         return (
 
-            <div className="video" id={`video-section_${video.id}`}>
-                <Top t1={this.state.height + "px"} />
-                <Bottom text={window.outerHeight + "px"} />
+            <section className="video" id={`video-section_${video.id}`}>
+                <Top t1='The architectural art' />
+                <Bottom text='Please scroll down for more' />
                 <img src={playIcon} className={iconClass} onClick={this.togglePlayState}/>
                 <video
                     id={`video_${video.id}`}
@@ -99,7 +91,7 @@ class VideosMobile extends PureComponent {
                     style={{ backgroundImage: afterImage }}
                 ></div>
 
-            </div>
+            </section>
 
         )
     }

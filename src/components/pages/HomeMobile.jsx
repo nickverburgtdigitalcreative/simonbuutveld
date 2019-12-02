@@ -12,7 +12,6 @@ import videoCollections from '../../data/videoCollections'
 class HomeMobile extends Component {
 
     restartVideo(id) {
-         console.log(id)
         const video = document.getElementById(id)
         const backgroundImage = document.getElementsByClassName(id)[0]
         if (video){
