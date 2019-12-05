@@ -151,14 +151,14 @@ class WhatKindOfValue extends Component {
                                 leverage the concept.</p>
                             </div>
                             <div id="sec3_inspiration">
-                                <img src={leif} alt='Leif Stromes' />
+                                <img src={leif} alt='Leif Stromnes' />
                                 <p>“What we’ve done is challenge long-standing marketing beliefs of what’s important to brands
             and how people make decisions”</p>
                                 <p>“Feeling conquers thinking”</p>
                                 <p>“Winning the mind of the consumer is not as important as emotionally connecting
             to the mind of a consumer”</p>
                                 <p>“DDB needs to be doing famous advertising that moves people emotionally”.</p>
-                                <p><strong>LEIF STROMES</strong> - DDB Australia MD of strategy and innovation</p>
+                                <p><strong>LEIF STROMNES</strong> - DDB Australia MD of strategy and innovation</p>
                             </div>
                             <div className="paragraph"><p>DDB’s three tiered strategy (new busines model) was inspired by research
                                 from Peter Field and Les Binet that found that fame and feelings work much harder for business than
