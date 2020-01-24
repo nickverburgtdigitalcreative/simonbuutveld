@@ -99,7 +99,7 @@ class WhatKindOfValue extends Component {
                                 <p>The diagram below has been created by a team of psychologists to help understand
                                 how different kinds of information matters to people.</p>
                                 <p>The various moments from our customer journey are placed in the diagram according
-                                    to the informfation people want to see at that time. For example the quote
+                                    to the information people want to see at that time. For example the quote
                                     moments are situated in the bottom left corner. This is because the kind of
                                     information that needs to be conveyed at this time is USEFUL and PERSONALISED.
                                 The quote doesn’t mean anything to anyone else.</p>
@@ -145,7 +145,7 @@ class WhatKindOfValue extends Component {
                             </div>
                             <div className="paragraph">
                                 <p>People are starting to see the power and value of emotion and how it is now more relevant
-                                    than ever. To the extent where major companies are changing their entire corporate model
+                                    than ever, to the extent where major companies are changing their entire corporate model
                                 to best utilise it.</p>
                                 <p>Here is a recent example about communications group DDB and what they are doing to
                                 leverage the concept.</p>
@@ -246,7 +246,7 @@ class WhatKindOfValue extends Component {
                             <div className="paragraph para_outro">
                                 <p>At the <strong>INITIAL DESIGN</strong> phase of the customer journey there 
                                 is a key moment where we can trigger an <strong>EMOTIONAL CONNECTION</strong>.</p>
-                                <p>This connection will solidify the customers choice of selecting <strong>YOUR BUSINESS</strong> and 
+                                <p>This connection will solidify the customer's choice of selecting <strong>YOUR BUSINESS</strong> and
                                 significantly smooth the process from this point on, saving time and money.</p>
                             </div>
 
