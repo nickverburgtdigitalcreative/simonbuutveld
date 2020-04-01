@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Top from './utils/Top'
 import Bottom from './utils/Bottom'
 
-const Videos = ({ video }) => {
+const Videos = ({ video, src }) => {
 
     const style = {
         afterLoad: {
@@ -26,7 +26,7 @@ const Videos = ({ video }) => {
                     className='art_videos'
                     playsInline={true}
                 >
-                    <source src={ video.video } type="video/mp4" />
+                    {/*<source src={ video.video } type="video/mp4" /> source inserted by PreLoader.jsx */}
                 </video>
                 <div className={`background_image after video_${video.id}`} style={{ ...style.fullScreen, ...style.afterLoad }}></div>
                 

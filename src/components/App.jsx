@@ -49,7 +49,7 @@ class App extends Component {
 
     render() {
 
-        const { isMobile } = this.state
+        const { isMobile } = this.state.isMobile;
 
         return (
             <Fragment>
