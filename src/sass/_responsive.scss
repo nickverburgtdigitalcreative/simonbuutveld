@@ -103,8 +103,9 @@
     }
 }
 @media all and (max-width: 800px) {
-    
-    
+
+    #toggle #menu ul li a { margin: 0; }
+
     .top .col:before,
     .scroll:after {
         height: 3em;
@@ -129,7 +130,6 @@
     .scroll {
         font-size: 0.7em;
     }
-    #section3_graph3,
     #sec3_inspiration,
     .paragraph{
         margin: 0 auto 6em;
@@ -154,8 +154,8 @@
         }
 
         #section3_graph2{
-            margin-bottom: 6em;
-            margin-top: -70px;
+            padding-bottom: 6em;
+            margin-top: -60px;
         }
         #s5_robots{
             height: 111px !important;
@@ -216,6 +216,7 @@
         }
     }
 }
+
 @media all and (max-width: 667px) {
 
     body.portrait{
@@ -371,6 +372,7 @@
         }
     }
 }
+
 @media all and (max-width:600px) {
     html, body { font-size: 12px; }
     .top .t2 { width: 100%; }
@@ -389,11 +391,13 @@
     .portfolio div { width: 33.3%; }
     
 }
+
 @media all and (max-width: 560px) {
     .col {
         padding: 0 69px;
     }
 }
+
 @media all and (max-width: 480px) {
     html,
     body {
@@ -413,6 +417,7 @@
         width: 100%;
     }
 }
+
 @media all and (min-width: 1200px) {
     .br-lgplus {
     }
@@ -423,6 +428,7 @@
 	.paragraph { width: 66%; }
     .portfolio div { width: 16.66%; }
 }
+
 @media all and (max-width:800px), all and (max-height:460px) {
     html, body { font-size: 12px; }
     .f1_txt2 {
@@ -436,6 +442,7 @@
     #toggle #menu ul li a { font-size: 2.4em; }
     .portfolio div { width: 25%; }
 }
+
 @media all and (max-height:460px) {
     .f1_line { margin: 2em auto; }
     .top::before, .bottom::after { height: 2em; }
@@ -445,7 +452,6 @@
 }
 
 @media all and (max-width: 400px) {
-    #toggle #menu ul li a { margin: 0; }
     // .sub .page > div {
     //     width: 80%;
     //     max-width: 80%;
@@ -478,6 +484,7 @@
         margin-top: 30px;
     }
 }
+
 @media all and (max-height: 399.98px) {
     #section-1{
         .t2{

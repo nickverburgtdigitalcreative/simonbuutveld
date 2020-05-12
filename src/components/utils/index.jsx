@@ -13,24 +13,68 @@ export function innerPageSlideUp() {
     const alphaDark = document.getElementsByClassName('alpha_dark')
     page[0].classList.add('slideup')
     alphaDark[0].classList.add('slideup')
-
-    checkOrientation()
-
-    window.addEventListener('resize', checkOrientation)
-
 }
 
-function checkOrientation(){
-    if (window.orientation === undefined){
-        return
-    }
-    if (window.orientation === 0 || window.innerHeight > window.innerWidth) {
-        document.body.classList.remove('landscape')
-        document.body.classList.add('portrait')
+export function checkOrientation(){
+    console.log("called");
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+    if (!isLandscape || window.innerHeight > window.innerWidth) {
+        document.body.classList.add('portrait');
+        document.body.classList.remove('landscape');
     } else {
-        document.body.classList.add('landscape')
-        document.body.classList.remove('portrait')
+        document.body.classList.add('landscape');
+        document.body.classList.remove('portrait');
     }
+}
+
+export function isMobileDevice() {
+    const noHover = window.matchMedia("screen and (hover: none)").matches;
+    const noMouse = window.matchMedia("screen and (pointer: coarse)").matches;
+
+    let result = (noHover && noMouse);
+
+    if (result === false) { //double check for Safari
+        console.log("test for safari mobile");
+        result = safariUACheck();
+    }
+    return result;
+}
+
+function safariUACheck() {
+    const ua = window.navigator.userAgent;
+    const iOS = !!ua.match(/iP(ad|hone)/i);
+    const webkit = !!ua.match(/WebKit/i);
+    return iOS && webkit && !ua.match(/CriOS/i);
+}
+
+/**
+ * TouchEvent interface is compatible on all browsers except Safari desktop & IE
+ *
+ * see: https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent
+ *
+ * @returns {boolean}
+ */
+function isNotSafariOrIE() {
+    let test = null;
+    try {
+        test = new TouchEvent("test");
+        return test !== null;
+    } catch(e) {
+        return false;
+    }
+}
+
+/**
+ * Standard math clamp function
+ *
+ * @param val
+ * @param min
+ * @param max
+ * @returns {number}
+ */
+export function clamp(val, min, max) {
+    return Math.min(Math.max(val, min), max);
 }
 
 function calcPercent(percent) {
@@ -317,6 +361,8 @@ export function section5Video1() {
 
 export function bodyHeight() {
 
+    document.body.style.height = "";
+
     const winH = window.innerHeight;
     const winH4 = window.innerHeight / 4;
     const page = document.getElementsByClassName('page')
@@ -327,18 +373,18 @@ export function bodyHeight() {
         const pageH = page[0].offsetHeight
         const logoP = logo.offsetHeight * 1.5;
         const bodyCalc = winH + pageH - winH4 + logoP;
-    
-        document.body.classList.add('sub')
-        document.body.style.height = bodyCalc + 'px'
 
-        if  ( 
-            (subpage && window.innerWidth <= 667) || 
-            ( window.orientation === 90 || window.orientation === -90 ) 
+        document.body.classList.add('sub')
+        //document.body.style.height = bodyCalc + 'px'
+
+        if  (
+            (subpage && window.innerWidth <= 667) ||
+            (  window.matchMedia("(orientation: landscape)").matches )
         ){
             subpage.style.height = bodyCalc + 'px'
         }
-    }    
-    
+    }
+
 
     window.addEventListener('resize', bodyHeight);
 
@@ -414,8 +460,6 @@ function videoPlayback(e, vidEl) {
             vidEl.classList.remove('show')
             vidEl.classList.remove('hide')
 
-            console.log(vidEl)
-            
             if (vidEl.nextSibling){
                 vidEl.nextSibling.classList.remove('show')
             }
@@ -445,13 +489,10 @@ export function videosAnimation(sectionId) {
 
     })
     .setTween(animation.play());
-
-    
 }
 
 export function homepageAnimation() {
     const controller = new ScrollMagic.Controller()
-    
     const mobileHomeSections = document.getElementsByClassName('section_mobile')
 
     if (mobileHomeSections){

@@ -13,12 +13,24 @@ const WebRouter = () => {
         <Router>
             <Header />
             <Switch>
-                <Route exact path='/' component={App} />
-                <Route path='/who-i-am' component={WhoIAm} />
-                <Route path='/where-to-add-value' component={WhereToAddValue} />
-                <Route path='/what-kind-of-value' component={WhatKindOfValue} />
-                <Route path='/why-add-emotional-value' component={WhyAddEmotionalValue} />
-                <Route path='/how-to-add-value' component={HowToAddEmotionalValue} />
+                <Route exact path='/' >
+                    <App />
+                </Route>
+                <Route path='/who-i-am'>
+                    <WhoIAm />
+                </Route>
+                <Route path='/where-to-add-value'>
+                    <WhereToAddValue />
+                </Route>
+                <Route path='/what-kind-of-value'>
+                    <WhatKindOfValue />
+                </Route>
+                <Route path='/why-add-emotional-value'>
+                    <WhyAddEmotionalValue />
+                </Route>
+                <Route path='/how-to-add-value'>
+                    <HowToAddEmotionalValue />
+                </Route>
             </Switch>
         </Router>
     )

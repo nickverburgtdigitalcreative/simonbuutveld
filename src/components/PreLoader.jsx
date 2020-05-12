@@ -4,6 +4,7 @@ import Deferred from "./utils/Deferred";
 import videoCollections from '../data/videoCollections'
 
 import logo from '../images/logo_header.png'
+import {checkOrientation, clamp, isMobileDevice} from "./utils";
 
 
 let perfData = window.performance.timing;
@@ -40,8 +41,12 @@ class PreLoader extends Component {
     }
 
     componentDidMount() {
-        pageLoad.then(() => {
+        checkOrientation();
+        if(isMobileDevice()) {
+            document.body.classList.add('isMobile');
+        }
 
+        pageLoad.then(() => {
             if (this.props.isMobile) {
                 this.legacyLoad();
             } else {
@@ -52,6 +57,7 @@ class PreLoader extends Component {
 
     render() {
         if (!this.props.isMobile) {
+            style.imageLoader.opacity = clamp(this.state.percentage / 100, 0, 1);
             style.loadbar.height = this.state.loadbarHeight + "px";
         }
 
@@ -110,7 +116,9 @@ class PreLoader extends Component {
             }
 
             // updateCurrentSectionClass(this.props.current)
-
+            if(this.props.loadedCallback) {
+                this.props.loadedCallback();
+            }
         }, time)
     }
 
@@ -152,22 +160,31 @@ class PreLoader extends Component {
         if (scrollbar[2]) {
             scrollbar[2].classList.add('show')
         }
+
+        //apply any callbacks waiting for video load
+        if(this.props.loadedCallback) {
+            this.props.loadedCallback();
+        }
     }
 
     preLoadVideos() {
         const promises = [];
-        for (let i = 1; i < Object.keys(videoCollections).length; i++) {
+        for (let i = 1; i < Object.keys(videoCollections).length + 1; i++) {
+            const elem = document.getElementById("video_" + videoCollections[i].id);
+            if(!elem) {
+                continue;
+            }
             promises.push(
                 this.videoGET(
                     videoCollections[i].video, //url
                     (data) => {
-                        document.getElementById("video_" + videoCollections[i].id).src = data;
+                        elem.src = data;
                     },
                     (response) => {
                         console.log(response);
                     })
                     .then(() => {
-                        this.contUp.update(this.state.percentage + this.increment);
+                        this.contUp.update(clamp(this.state.percentage + this.increment, 0, 100));
                         this.setState({
                             percentage: this.state.percentage + this.increment,
                             loadbarHeight: this.state.loadbarHeight + this.increment,

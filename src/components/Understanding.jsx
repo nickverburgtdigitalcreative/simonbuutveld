@@ -14,13 +14,15 @@ import thumb05 from '../images/subpages/sub_thumb_05.jpg'
 import Top from './utils/Top'
 import Bottom from './utils/Bottom'
 
+const curSlide = window.sessionStorage.getItem("curSlide");
 
-const settings = {
+let settings = {
     slidesToShow: 3,
     infinite: false,
     slidesToScroll: 1,
     dots: true,
     ease: 'easeInOutCubic',
+    initialSlide: curSlide ? parseInt(curSlide) : 0,
     responsive: [{
         breakpoint: 1200,
         settings: {
@@ -35,23 +37,25 @@ const settings = {
             slidesToScroll: 1,
             dots: false,
         }
-    }]
-}
+    }],
 
+    afterChange: (index) => {
+        window.sessionStorage.setItem("curSlide", index);
+    }
+}
 
 
 class Understanding extends Component {
 
-
     handleClick = (e) => {
         e.preventDefault()
-        const home = e.target.getAttribute('data-to')
+        const target = e.target.getAttribute('data-to')
         const fader = document.getElementById('fader')
 
         fader.classList.add('show')
         
         setTimeout(() => {
-            document.location.href = home
+            document.location.href = target;
         }, 1000);
     }
 

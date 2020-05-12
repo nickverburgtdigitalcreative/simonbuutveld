@@ -1,16 +1,15 @@
 /*************** SCROLLBAR BASE CSS ***************/
+html {
+    overflow-x: hidden;
+}
 body{
-    &.sub{
+    &:not(.isMobile) {
         overflow: hidden;
+    }
+
+    &.sub{
         background-color: rgba(0,0,0,0.9);
     }
-}
-
-@-moz-document url-prefix() {
-    body.sub{
-        overflow: hidden;
-    }        
-    
 }
 
 .scroll-wrapper {

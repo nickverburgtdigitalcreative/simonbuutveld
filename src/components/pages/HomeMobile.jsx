@@ -10,6 +10,27 @@ import Contact from './../Contact';
 import videoCollections from '../../data/videoCollections'
 
 class HomeMobile extends Component {
+    constructor(props) {
+        super(props);
+        const isLandscape = window.matchMedia("(orientation: landscape)").matches && window.innerHeight < window.innerWidth;
+        this.state = {
+            isLandscape,
+            height : window.innerHeight
+        }
+
+        var that = this;
+        window.addEventListener("resize", function() {
+            const isLandscape = window.matchMedia("(orientation: landscape)").matches && window.innerHeight < window.innerWidth;
+            console.log(window.innerHeight);
+            if(that.state.isLandscape !== isLandscape) {
+                that.setState({
+                    isLandscape,
+                    height: window.innerHeight
+                });
+            }
+        });
+    }
+
 
     restartVideo(id) {
         const video = document.getElementById(id)
@@ -31,7 +52,7 @@ class HomeMobile extends Component {
 
     render() {
         return (
-            <div id="mobile_home">
+            <div id="mobile_home" style={{height: this.state.height}}>
                 <section id="introduction">
                     <div id='section-0' className='section section_mobile introduction'>
                         <Introduction />

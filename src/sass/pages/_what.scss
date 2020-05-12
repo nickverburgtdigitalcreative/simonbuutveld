@@ -85,7 +85,14 @@
 #graph_s03g02 {
     display: block;
     position: relative;
+    overflow: hidden;
     margin: 0 auto 6em;
+    z-index: -1;
+    min-height: 370px;
+
+    @media (max-width: 900px) {
+        margin: 0 auto;
+    }
 
     @media(min-width: 1090px){
         margin: -4em auto -4em;
@@ -101,9 +108,6 @@
 #graph_s03g02 .subFull {
     width: 100%;
     height: 100%;
-}
-#donutBg {
-    z-index: 1;
 }
 #donut1 text,
 #donut2 text {
@@ -184,14 +188,12 @@
 }
 
 #donutBg {
+    z-index: 1;
     display: flex;
     flex-direction: row-reverse;
-    // align-content: space-around;
     justify-content: space-between;
-    // position: absolute;
     position: relative;
-    bottom: 90px;
-    // width: 90%;
+    bottom: 20px;
     width: 100%;
 
     @media(min-width: 768px){
@@ -338,11 +340,8 @@
 #graph_s03g03 {
     display: block;
     position: relative;
-    margin: 0 auto 4em;
-
-    @media(min-width: 900px){
-        margin: -2em auto 0;
-    }
+    //margin: 0 auto 4em;
+    margin: 0 auto;
 
     div {
         background-repeat: no-repeat;

@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
-import { 
-    drawDonutChartTrigger, 
-    innerPageSlideUp, 
-    section3_quadrant, 
-    section3_graph3, 
+import {
+    drawDonutChartTrigger,
+    innerPageSlideUp,
+    section3_quadrant,
+    section3_graph3,
     bodyHeight,
-    viewportWidth,
+    viewportWidth, isMobileDevice,
 } from '../utils'
 import scrollbar from '../utils/Scrollbar'
 import BackButton from '../utils/BackButton'
@@ -23,26 +23,11 @@ const donut2RadiusMobile = 300
 
 class WhatKindOfValue extends Component {
 
-
     componentDidMount() {
 
         bodyHeight()
         scrollbar()
-
-        const s3g1 = document.getElementById('graph_s03g01')
-        const s3g2 = document.getElementById('graph_s03g02');
-        const s3g3 = document.getElementById('graph_s03g03');
-
-        let times
-        if ( viewportWidth <= 768){
-            times = 0.8
-        } else {
-            times = 0.6
-        }
-
-        s3g1.style.height = s3g1.offsetWidth * 0.8 + 'px'
-        s3g2.style.height = s3g2.offsetWidth * 0.4 + 'px'
-        s3g3.style.height = s3g3.offsetWidth * times + 'px'
+        setSpacing();
 
         innerPageSlideUp()
         section3_quadrant()
@@ -51,22 +36,7 @@ class WhatKindOfValue extends Component {
         section3_graph3()
         
         window.addEventListener('resize', () => {
-            const s3g1 = document.getElementById('graph_s03g01')
-            const s3g2 = document.getElementById('graph_s03g02');
-            const s3g3 = document.getElementById('graph_s03g03');
-
-            if ( viewportWidth <= 768){
-                times = 0.8
-                
-            } else {
-                times = 0.6
-            }
-
-            s3g1.style.height = s3g1.offsetWidth * 0.8 + 'px'
-            s3g2.style.height = s3g2.offsetWidth * 0.4 + 'px'
-            s3g3.style.height = s3g3.offsetWidth * 0.8 + 'px'
-
-        
+            setSpacing();
         }, false)
 
     }
@@ -256,6 +226,16 @@ class WhatKindOfValue extends Component {
             </Fragment>
         )
     }
+}
+
+function setSpacing() {
+    const s3g1 = document.getElementById('graph_s03g01')
+    const s3g2 = document.getElementById('graph_s03g02');
+    const s3g3 = document.getElementById('graph_s03g03');
+
+    s3g1.style.height = s3g1.offsetWidth * 0.8 + 'px'
+    s3g2.style.height = s3g2.offsetWidth * (isMobileDevice() && viewportWidth() <=768 ? 0.8 : 0.4) + 'px'
+    s3g3.style.height = s3g3.offsetWidth * (isMobileDevice() && viewportWidth() <=667 ? 0.8 : 0.6) + 'px'
 }
 
 export default WhatKindOfValue
