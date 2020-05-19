@@ -29,7 +29,6 @@ class WhatKindOfValue extends Component {
         scrollbar()
         setSpacing();
 
-        innerPageSlideUp()
         section3_quadrant()
         drawDonutChartTrigger(donut1RadiusDesktop, donut2RadiusDesktop, 2, 'desktop')
         drawDonutChartTrigger(donut1RadiusMobile, donut2RadiusMobile, 3, 'mobile')
@@ -41,12 +40,16 @@ class WhatKindOfValue extends Component {
 
     }
 
+    preLoaderCallback() {
+        innerPageSlideUp()
+    }
+
 
     render() {
 
         return (
             <Fragment>
-                <PreLoader />
+                <PreLoader loadedCallback={this.preLoaderCallback}/>
                 <HelmetMeta title='What Kind Of Value' />
                 <BackButton />
                 <div id="subpage">

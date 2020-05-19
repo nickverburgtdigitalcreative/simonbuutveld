@@ -2,9 +2,7 @@ import React, { Component, Fragment } from 'react'
 import MyModal from "./utils/MyModal";
 import '../App.scss'
 
-import {
-    viewportWidth, homepageAnimation, checkOrientation, isMobileDevice
-} from './utils'
+import { homepageAnimation, checkOrientation, isMobileDevice } from './utils'
 
 import PreLoader from './PreLoader'
 import Helmet from './Helmet'
@@ -12,12 +10,19 @@ import Menu from './Menu'
 
 import HomeDesktop from './pages/HomeDesktop'
 import HomeMobile from './pages/HomeMobile';
+import { homeHOC } from "./utils/HOCs";
+
 
 class App extends Component {
 
-    state = {
-        isMobile: isMobileDevice()
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isMobile: isMobileDevice(),
+            shouldShow: false,
+        };
+    }
 
     componentDidMount(){
         setTimeout(() => {
@@ -49,20 +54,26 @@ class App extends Component {
         document.querySelector("#content-wrap").style.setProperty("display", "")
     }
 
+    loadedCallBack = () => {
+        this.setState({shouldShow: true})
+        this.fixFullPageJS();
+    }
+
 
     render() {
         const isMobile = this.state.isMobile;
+        const Home = homeHOC(HomeDesktop);
 
         return (
             <Fragment>
                 <Helmet title="introduction" />
-                <PreLoader isMobile={isMobile} loadedCallback={this.fixFullPageJS}/>
+                <PreLoader isMobile={isMobile} loadedCallback={this.loadedCallBack}/>
                 <MyModal />
                 <Menu />
                 <div id="fader"></div>
                 <div id="content-wrap" style={{"display" : "none"}}>
                     { !isMobile
-                        ? <HomeDesktop />
+                        ? <Home shouldShow={this.state.shouldShow}/>
                         : <HomeMobile />
                     }
                 </div>

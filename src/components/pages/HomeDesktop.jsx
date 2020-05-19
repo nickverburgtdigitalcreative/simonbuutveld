@@ -22,11 +22,8 @@ class HomeDesktop extends Component {
         current: 0,
     }
 
-    componentDidMount(){
-        updateCurrentSectionClass( this.state.current )
-    }
-
     updateCurrentSection = (current) => {
+        updateCurrentSectionClass( current )
         this.setState({
             current
         })

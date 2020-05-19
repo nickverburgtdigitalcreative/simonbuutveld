@@ -28,11 +28,7 @@ import s5_robots_bg from '../../images/animations/s5_robots_bg_Si-made.jpg'
 class HowToAddEmotionalValue extends Component {
 
     componentDidMount() {
-        setTimeout(() => {
-            innerPageSlideUp()
-        }, 1000);
-
-        bodyHeight()    
+        bodyHeight()
         scrollbar()
         
         const graphRobotsW = document.getElementById('s5_robots_bg')
@@ -46,11 +42,15 @@ class HowToAddEmotionalValue extends Component {
 
     }
 
+    preLoaderCallback() {
+        innerPageSlideUp()
+    }
+
     render() {
 
         return (
             <Fragment>
-                <PreLoader />
+                <PreLoader loadedCallback={this.preLoaderCallback}/>
                 <HelmetMeta title='How to Add Value' />
                 <BackButton />
                 <div id="subpage">

@@ -46,16 +46,18 @@ class WhoIAm extends Component {
         image.forEach(item => item.style.height = imagesHeight)
         portfolioDiv[0].style.marginBottom = imagesHeight
 
-        innerPageSlideUp()
-
         document.addEventListener('touchstart', function(){}, true)
+    }
+
+    preLoaderCallback() {
+        innerPageSlideUp()
     }
 
     render() {
 
         return (
             <Fragment>
-                <PreLoader />
+                <PreLoader loadedCallback={this.preLoaderCallback}/>
                 <HelmetMeta title='Who I am' />
                 <BackButton />
                 <div id="subpage">

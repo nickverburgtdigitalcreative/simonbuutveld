@@ -125,6 +125,7 @@ class PreLoader extends Component {
     desktopLoadStart() {
         this.contUp = new CountUp('percent', 18, {duration: animationTime, suffix: '%'});
         const image = document.getElementsByClassName('image_loader')
+
         if (image.length > 0) {
             image[0].classList.add('opacity')
         }
@@ -133,9 +134,15 @@ class PreLoader extends Component {
             loadbarHeight: 18,
         });
         this.contUp.start();
+
         this.preLoadVideos().then(() => {
             setTimeout( () => {
                 this.desktopLoadEnd()
+
+                //apply any callbacks waiting for loading to finish
+                if(this.props.loadedCallback) {
+                    this.props.loadedCallback();
+                }
             }, halfTime);
         });
     }
@@ -160,41 +167,56 @@ class PreLoader extends Component {
         if (scrollbar[2]) {
             scrollbar[2].classList.add('show')
         }
-
-        //apply any callbacks waiting for video load
-        if(this.props.loadedCallback) {
-            this.props.loadedCallback();
-        }
     }
 
+    updateCounter() {
+        console.log(this);
+        this.contUp.update(clamp(this.state.percentage + this.increment, 0, 100));
+        this.setState({
+            percentage: this.state.percentage + this.increment,
+            loadbarHeight: this.state.loadbarHeight + this.increment,
+        });
+    }
+
+    /**
+     * Call videoGet for all videos asynchronously
+     *
+     * @returns {Promise<XMLHttpRequest[]>}
+     */
     preLoadVideos() {
+        const that = this;
         const promises = [];
+
         for (let i = 1; i < Object.keys(videoCollections).length + 1; i++) {
             const elem = document.getElementById("video_" + videoCollections[i].id);
             if(!elem) {
-                continue;
+                this.updateCounter();
+            } else {
+                promises.push(
+                    that.videoGET(
+                        videoCollections[i].video, //url
+                        (data) => {
+                            elem.src = data;
+                        },
+                        (response) => {
+                            console.log(response);
+                        })
+                        .then(() => { this.updateCounter() })
+                )
             }
-            promises.push(
-                this.videoGET(
-                    videoCollections[i].video, //url
-                    (data) => {
-                        elem.src = data;
-                    },
-                    (response) => {
-                        console.log(response);
-                    })
-                    .then(() => {
-                        this.contUp.update(clamp(this.state.percentage + this.increment, 0, 100));
-                        this.setState({
-                            percentage: this.state.percentage + this.increment,
-                            loadbarHeight: this.state.loadbarHeight + this.increment,
-                        });
-                    }));
         }
 
         return Promise.all(promises);
     }
 
+    /**
+     * Retrieve a blob object of artwork video
+     *
+     * @param url AJAX url
+     * @param onSuccess AJAX success callback
+     * @param onFail AJAX failure callback
+     * @returns {Promise<XMLHttpRequest>}
+     */
     videoGET(url, onSuccess, onFail) {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();

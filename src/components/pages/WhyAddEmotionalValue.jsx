@@ -16,9 +16,6 @@ import s4_house_bg from '../../images/animations/s4_house_bg.jpg'
 class WhyAddEmotionalValue extends Component {
 
     componentDidMount() {
-        setTimeout(() => {
-            innerPageSlideUp()
-        }, 1000);
         bodyHeight()
         scrollbar()
 
@@ -35,11 +32,15 @@ class WhyAddEmotionalValue extends Component {
         section4Animation02()
     }
 
+    preLoaderCallback() {
+        innerPageSlideUp()
+    }
+
     render() {
 
         return (
             <Fragment>
-                <PreLoader />
+                <PreLoader loadedCallback={this.preLoaderCallback}/>
                 <HelmetMeta title='Why add emotional value' />
                 <BackButton />
                 <div id="subpage">

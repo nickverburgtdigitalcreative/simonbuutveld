@@ -27,16 +27,19 @@ class WhereToAddValue extends Component {
             
             cover.style.height = graph[0].offsetWidth * 0.4 + 'px'
         }, false)
-        
-        innerPageSlideUp()
+
         section2_graph()
+    }
+
+    preLoaderCallback() {
+        innerPageSlideUp()
     }
 
     render() {
 
         return (
             <Fragment>
-                <PreLoader />
+                <PreLoader loadedCallback={this.preLoaderCallback}/>
                 <HelmetMeta title='Where to add value' />
                 <BackButton />
                 <div id="subpage">
