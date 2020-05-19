@@ -4,9 +4,23 @@ section{
         min-height: -webkit-fill-available;
 
         video{
-            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            //width: auto;
+            //height: 100%;
+            min-width: 100%;
+            width: auto;
             height: 100%;
             object-fit: cover;
+
+            //@supports not (object-fit: cover) {
+            //    width: auto;
+            //}
+            //
+            //@include IE10-11(width, auto)
         }
 
         &::before {

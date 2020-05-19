@@ -1,3 +1,11 @@
+//mixins
+@mixin IE10-11($property, $value) {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        #{$property} : #{$value};
+    }
+}
+
+
 html,body {
 	 background-color: #191919;
 	// color: #191919;
