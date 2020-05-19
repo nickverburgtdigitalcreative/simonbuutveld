@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import MyModal from "./utils/MyModal";
 import '../App.scss'
 
-import { homepageAnimation, checkOrientation, isMobileDevice } from './utils'
+import {homepageAnimation, checkOrientation, isMobileDevice, updateCurrentSectionClass, videosAnimation} from './utils'
 
 import PreLoader from './PreLoader'
 import Helmet from './Helmet'
@@ -13,12 +13,18 @@ import HomeMobile from './pages/HomeMobile';
 import { homeHOC } from "./utils/HOCs";
 
 
+/**
+ * Bad naming convention; this is not the 'app' itself, but rather a wrapper component for the homepage.
+ * 'Router' is the actual component that should be named 'app'
+ */
+
 class App extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
+            current: 0,
             isMobile: isMobileDevice(),
             shouldShow: false,
         };
@@ -54,15 +60,28 @@ class App extends Component {
         document.querySelector("#content-wrap").style.setProperty("display", "")
     }
 
+    updateCurrentSection = (current) => {
+        updateCurrentSectionClass( current )
+        this.setState({
+            current
+        })
+    }
+
+    scrollCallback = (states) => {
+        this.updateCurrentSection(states.activeSection)
+        if (states.activeSection >= 3 && states.activeSection < 14) {
+            videosAnimation(states.activeSection)
+        }
+    }
+
     loadedCallBack = () => {
         this.setState({shouldShow: true})
         this.fixFullPageJS();
+        this.updateCurrentSection(this.state.current)
     }
-
 
     render() {
         const isMobile = this.state.isMobile;
-        const Home = homeHOC(HomeDesktop);
 
         return (
             <Fragment>
@@ -73,7 +92,7 @@ class App extends Component {
                 <div id="fader"></div>
                 <div id="content-wrap" style={{"display" : "none"}}>
                     { !isMobile
-                        ? <Home shouldShow={this.state.shouldShow}/>
+                        ? <HomeDesktop current={this.state.current} scrollCB={this.scrollCallback}/>
                         : <HomeMobile />
                     }
                 </div>

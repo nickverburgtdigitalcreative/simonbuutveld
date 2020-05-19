@@ -8,6 +8,11 @@ import WhatKindOfValue from './pages/WhatKindOfValue'
 import WhyAddEmotionalValue from './pages/WhyAddEmotionalValue'
 import HowToAddEmotionalValue from './pages/HowToAddEmotionalValue'
 
+/**
+ * THIS is the actual 'App', aka the main entry point
+ *
+ */
+
 const WebRouter = () => {
     return (
         <Router>

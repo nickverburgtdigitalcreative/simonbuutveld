@@ -17,29 +17,7 @@ const allAnchors = myAnchors.concat(anchorVideos, 'contact')
 
 class HomeDesktop extends Component {
 
-
-    state = {
-        current: 0,
-    }
-
-    updateCurrentSection = (current) => {
-        updateCurrentSectionClass( current )
-        this.setState({
-            current
-        })
-    }
-
-    scrollCallback = (states) => {
-        updateCurrentSectionClass(states.activeSection)
-        this.updateCurrentSection(states.activeSection)
-        if (states.activeSection >= 3 && states.activeSection < 14) {
-            videosAnimation(states.activeSection)
-        }
-    }
-
     render() {
-
-        const { current } = this.state
 
         let options = {
             sectionClassName: 'section',
@@ -51,7 +29,7 @@ class HomeDesktop extends Component {
 
         return (
             <Fragment>
-                <SectionsContainer {...options} activeSection={current} scrollCallback={this.scrollCallback}>
+                <SectionsContainer {...options} activeSection={this.props.current} scrollCallback={this.props.scrollCB}>
                     <Section id='section-0' className='introduction'>
                         <Introduction />
                     </Section>
