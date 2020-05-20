@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import { SectionsContainer, Section } from 'react-fullpage'
 
-import { updateCurrentSectionClass, videosAnimation } from './../utils'
+// import { updateCurrentSectionClass, videosAnimation } from './../utils'
 import Introduction from '../Introduction'
 import Understanding from '../Understanding'
 import Method from '../Method'

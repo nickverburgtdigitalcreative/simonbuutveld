@@ -106,7 +106,7 @@ class HowToAddEmotionalValue extends Component {
                                 <video 
                                     id="section5_art" 
                                     muted={true}
-                                    autoPlay={true}
+                                    autoPlay={false}
                                     playsInline={true}
                                 >
                                     <source src="../videos/section5_artv2.mp4" type="video/mp4" />
