@@ -235,13 +235,14 @@ class WhatKindOfValue extends Component {
 }
 
 function setSpacing() {
-    if(!isMobileDevice()) {
-        return;
-    }
+    // if(!isMobileDevice()) {
+    //     return;
+    // }
     const s3g1 = document.getElementById('graph_s03g01')
     const s3g2 = document.getElementById('graph_s03g02');
     const s3g3 = document.getElementById('graph_s03g03');
 
+    console.log(s3g1);
     s3g1.style.height = s3g1.offsetWidth * 0.8 + 'px'
     s3g2.style.height = s3g2.offsetWidth * (isMobileDevice() && viewportWidth() <=667 ? 0 : 0.4) + 'px'
     // s3g3.style.height = s3g3.offsetWidth * (isMobileDevice() && viewportWidth() <=667 ? 0.4 : 0.6) + 'px'

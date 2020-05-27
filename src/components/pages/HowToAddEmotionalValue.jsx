@@ -99,7 +99,7 @@ class HowToAddEmotionalValue extends Component {
                                 <p>They need to be shown something that is an accurate depiction of the proposed design but still loose enough that they can enjoy it without getting stuck on details they may be unsure about.</p>
                                 <p className="redxl">How is something shown that is technically accurate but loose at the same time - and of course, something people can inherently develop an emotional connection with?</p>
                             </div>
-                            <div className="top2">
+                            <div className="top2 mb-responsive">
                                 <div className="col2">
                                     <div className="t1"><strong>How</strong> to add value</div>
                                     <div className="t2">The answer is<div className="el">
@@ -108,7 +108,7 @@ class HowToAddEmotionalValue extends Component {
                                         <span className="e3">.</span></div></div>
                                 </div>
                             </div>
-                            <div className="graph_narrow">
+                            <div className="graph_narrow mb-responsive">
                                 <video 
                                     id="section5_art" 
                                     muted={true}

@@ -20,7 +20,7 @@
 }
 
 @media all and (max-width:1000px) {
-    .top .t2 { width: 75%; }
+    //.top .t2 { width: 75%; }
     .paragraph { width: 66%; }
     .portfolio div { width: 16.66%; }
 }
@@ -43,7 +43,7 @@
         #section-0{
             .f1_txt1{
                 margin-bottom: 0.5em;
-                margin-top: -2em;
+                //margin-top: -2em;
             }
             .line_draw{
                 margin-bottom: 1em;
@@ -79,7 +79,7 @@
     body.portrait{
         #section-1{
             .t2{
-                width: 80%;
+                //width: 80%;
                 padding: 0 50px;
             }
             #carousel{
@@ -121,7 +121,7 @@
 @media all and (max-width: 900px) {
     section{
         min-height: 100vh;
-        min-height: -webkit-fill-available;
+        //min-height: -webkit-fill-available;
     }
     .mb-responsive {
         margin-bottom: 30px !important;
@@ -228,12 +228,12 @@
         height: 3em;
     }
     .paragraph,
-    .top2 .t2,
+    //.top2 .t2,
     .f1_txt3 {
         width: 75%;
     }
     .top .t2 {
-        width: 100%;
+        //width: 100%;
     }
 }
 
@@ -277,7 +277,7 @@
         // }
 
         #section5_art{
-            margin-top: -4em;
+            //margin-top: -4em;
         }
 
     }
@@ -387,7 +387,7 @@
 
 @media all and (max-width:600px) {
     html, body { font-size: 12px; }
-    .top .t2 { width: 100%; }
+    //.top .t2 { width: 100%; }
     .top::before, .bottom::after { height: 3em; }
     #two .block { top: 55%; }
 	.paragraph { width: calc(100% - 92px); }
@@ -451,7 +451,7 @@
         letter-spacing: .1em;
     }
     .f1_txt3 { width: 85%; }
-    .top .t2,
+    //.top .t2,
     .paragraph,
     #sec3_inspiration{ width: 75%; }
     #toggle #menu ul li a { font-size: 2.4em; }
@@ -494,7 +494,7 @@
         }
     }
     #section-2 .txt1 {
-        margin-top: 30px;
+        //margin-top: 30px;
     }
 }
 
