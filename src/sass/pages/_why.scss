@@ -1,9 +1,16 @@
-#s4_cars,
-#s4_house,
-#s5_robots {
+#cars-section, #house-section {
     margin-bottom: 8em;
+    @media (max-width: 900px) {
+        margin-bottom: 30px;
+    }
+}
+
+#s4_cars, #s4_house, #s5_robots {
     position: relative;
     width: 100%;
+}
+#s5_robots {
+    margin-bottom: 8em;
 }
 
 #s4_cars {
@@ -36,8 +43,6 @@
         right: 0;
     }
 }
-
-
 
 #s4_house{
     div {

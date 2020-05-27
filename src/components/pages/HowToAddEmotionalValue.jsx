@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react'
 
 import HelmetMeta from '../Helmet'
 import PreLoader from '../PreLoader'
-import { 
-    innerPageSlideUp, 
-    section5Animation01, 
-    section5Video1, 
+import {
+    innerPageSlideUp,
+    section5Animation01,
+    section5Video1,
     bodyHeight,
-    dotAnimation,
+    dotAnimation, section4Animation01, section4Animation02,
 } from '../utils'
 import scrollbar from '../utils/Scrollbar'
 import BackButton from '../utils/BackButton'
@@ -30,20 +30,26 @@ class HowToAddEmotionalValue extends Component {
     componentDidMount() {
         bodyHeight()
         scrollbar()
-        
-        const graphRobotsW = document.getElementById('s5_robots_bg')
-        const robot = document.getElementById('s5_robots')
+        this.setSpacing()
 
-        robot.style.height = graphRobotsW.offsetWidth * 0.3294 + 'px'
+        window.addEventListener("resize", () => {
+            this.setSpacing()
+        })
 
         section5Animation01()
         section5Video1()
         dotAnimation()
-
     }
 
     preLoaderCallback() {
         innerPageSlideUp()
+    }
+
+    setSpacing() {
+        const graphRobotsW = document.getElementById('s5_robots_bg')
+        const robot = document.getElementById('s5_robots')
+
+        robot.style.height = graphRobotsW.offsetWidth * 0.34 + 'px'
     }
 
     render() {

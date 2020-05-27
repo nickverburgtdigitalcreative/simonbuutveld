@@ -33,7 +33,7 @@ class WhatKindOfValue extends Component {
         drawDonutChartTrigger(donut1RadiusDesktop, donut2RadiusDesktop, 2, 'desktop')
         drawDonutChartTrigger(donut1RadiusMobile, donut2RadiusMobile, 3, 'mobile')
         section3_graph3()
-        
+
         window.addEventListener('resize', () => {
             setSpacing();
         }, false)
@@ -146,7 +146,7 @@ class WhatKindOfValue extends Component {
                             </div>
 
                             <div id="section3_graph2" className="loaded aniLoaded">
-                                <div className="graph">
+                                <div id="donut-wrap" className="graph">
                                     <div id="graph_s03g02">
                                         <div className="donut" id="donut1">
                                             <svg width={donut1RadiusDesktop} height={donut1RadiusDesktop} className="placeholder_donut desktop">
@@ -173,18 +173,18 @@ class WhatKindOfValue extends Component {
                                                 <g transform="translate(150,150)">
                                                     <path className="color0" d="M6.123233995736766e-15,-100A100,100,0,0,1,92.97764858882513,36.8124552684678L65.0843540121776,25.76871868792746A70,70,0,0,0,4.2862637970157365e-15,-70Z"></path>
                                                     <path className="color1" d="M92.97764858882513,36.8124552684678A100,100,0,1,1,-1.8369701987210297e-14,-100L-1.2858791391047208e-14,-70A70,70,0,1,0,65.0843540121776,25.76871868792746Z"></path>
-                                                    
+
                                                 </g>
                                             </svg>
                                         </div>
                                     </div>
                                     <div id="donutBg">
                                         <div className="black">
-                                            <p id="donutBg1"></p> 
+                                            <p id="donutBg1"></p>
                                             <p>report the same with rational campaigns</p>
                                         </div>
                                         <div className="red">
-                                            <p id="donutBg2"></p> 
+                                            <p id="donutBg2"></p>
                                             <p>of advertisers report significant profit gains with emotional campaigns</p>
                                         </div>
                                     </div>
@@ -196,16 +196,19 @@ class WhatKindOfValue extends Component {
                                     <div className="t2">Adding emotion into the mix</div>
                                 </div>
                             </div>
-                            <div className="paragraph"><p>The diagram below describes a simplified but common initial design presentation content mix.</p><p>By adding emotion into this presentation format the customer receives the information they want in the way that matters to them. This becomes a powerful tool to increase customer compliancy.</p></div>
-                            <div id="section3_graph3">
+                            <div className="paragraph mb-responsive">
+                                <p>The diagram below describes a simplified but common initial design presentation content mix.</p>
+                                <p>By adding emotion into this presentation format the customer receives the information they want in the way that matters to them. This becomes a powerful tool to increase customer compliancy.</p>
+                            </div>
+                            <div id="section3_graph3" className="mb-responsive">
 
-                                <div className="graph">
-
-                                    <div id="graph_s03g03">
-                                        <div className="subFull" id="rings"></div>
-                                        <div className="subFull" id="ring"></div>
+                                <div id="section-3-container" className="graph">
+                                    <div id="venn-wrap">
+                                        <div id="graph_s03g03">
+                                            <div className="subFull" id="rings"></div>
+                                            <div className="subFull" id="ring"></div>
+                                        </div>
                                     </div>
-
                                 </div>
 
                             </div>
@@ -217,7 +220,7 @@ class WhatKindOfValue extends Component {
                             </div>
 
                             <div className="paragraph para_outro">
-                                <p>At the <strong>INITIAL DESIGN</strong> phase of the customer journey there 
+                                <p>At the <strong>INITIAL DESIGN</strong> phase of the customer journey there
                                 is a key moment where we can trigger an <strong>EMOTIONAL CONNECTION</strong>.</p>
                                 <p>This connection will solidify the customer's choice of selecting <strong>YOUR BUSINESS</strong> and
                                 significantly smooth the process from this point on, saving time and money.</p>
@@ -232,13 +235,16 @@ class WhatKindOfValue extends Component {
 }
 
 function setSpacing() {
+    if(!isMobileDevice()) {
+        return;
+    }
     const s3g1 = document.getElementById('graph_s03g01')
     const s3g2 = document.getElementById('graph_s03g02');
     const s3g3 = document.getElementById('graph_s03g03');
 
     s3g1.style.height = s3g1.offsetWidth * 0.8 + 'px'
-    s3g2.style.height = s3g2.offsetWidth * (isMobileDevice() && viewportWidth() <=768 ? 0.8 : 0.4) + 'px'
-    s3g3.style.height = s3g3.offsetWidth * (isMobileDevice() && viewportWidth() <=667 ? 0.8 : 0.6) + 'px'
+    s3g2.style.height = s3g2.offsetWidth * (isMobileDevice() && viewportWidth() <=667 ? 0 : 0.4) + 'px'
+    // s3g3.style.height = s3g3.offsetWidth * (isMobileDevice() && viewportWidth() <=667 ? 0.4 : 0.6) + 'px'
 }
 
 export default WhatKindOfValue

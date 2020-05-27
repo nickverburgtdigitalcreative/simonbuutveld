@@ -42,6 +42,10 @@ class PreLoader extends Component {
 
     componentDidMount() {
         checkOrientation();
+        window.addEventListener('resize', () => {
+            checkOrientation();
+        });
+
         if(isMobileDevice()) {
             document.body.classList.add('isMobile');
         }

@@ -18,7 +18,21 @@ class WhyAddEmotionalValue extends Component {
     componentDidMount() {
         bodyHeight()
         scrollbar()
+        this.setSpacing()
 
+        section4Animation01()
+        section4Animation02()
+
+        window.addEventListener("resize", () => {
+            this.setSpacing()
+        })
+    }
+
+    preLoaderCallback() {
+        innerPageSlideUp()
+    }
+
+    setSpacing() {
         const graphCarsW = document.getElementById('s4_cars_bg')
         const graphHouseW = document.getElementById('s4_house_bg');
 
@@ -27,13 +41,6 @@ class WhyAddEmotionalValue extends Component {
 
         cars.style.height = graphCarsW.offsetWidth * 0.25 + 'px'
         house.style.height = graphHouseW.offsetWidth * 0.6246 + 'px'
-
-        section4Animation01()
-        section4Animation02()
-    }
-
-    preLoaderCallback() {
-        innerPageSlideUp()
     }
 
     render() {
@@ -60,7 +67,7 @@ class WhyAddEmotionalValue extends Component {
                                     <div className="t2">It can be and often is the deciding factor</div>
                                 </div>
                             </div>
-                            <div className="paragraph">
+                            <div className="paragraph mb-responsive">
                                 <p>
                                     This can be the case especially when people are weighing
                                     up the pro’s and con’s of two similar items. Like the two cars shown below here.
@@ -81,7 +88,7 @@ class WhyAddEmotionalValue extends Component {
                                     purchase will beat a rational purchase every time.
                             </p>
                             </div>
-                            <div className="graph_full">
+                            <div id="cars-section" className="graph_full">
 
                                 <div id="s4_cars">
                                     <div id="s4_cars_redL"><img src={s4_cars_redL} alt="red car on the left" /></div>
@@ -89,7 +96,7 @@ class WhyAddEmotionalValue extends Component {
                                     <div id="s4_cars_bg"><img src={s4_cars_bg} alt="black and white cars" /></div>
                                 </div>
                             </div>
-                            <div className="paragraph">
+                            <div className="paragraph mb-responsive">
                                 <p>
                                     It is important to mention than emotional purchases as they are being described here refer
                                     to purchases where an emotional connection is the deciding factor as to why the customer
@@ -102,10 +109,12 @@ class WhyAddEmotionalValue extends Component {
                                     emotional connection with their initial house/property design.
                             </p>
                             </div>
-                            <div className="graph_full">
-                                <div id="s4_house">
-                                    <div id="s4_house_red"><img src={s4_house_red} alt='house in red' /></div>
-                                    <div id="s4_house_bg"><img src={s4_house_bg} alt='house in black and white' /></div>
+                            <div id="house-section">
+                                <div className="graph_full">
+                                    <div id="s4_house">
+                                        <div id="s4_house_red"><img src={s4_house_red} alt='house in red' /></div>
+                                        <div id="s4_house_bg"><img src={s4_house_bg} alt='house in black and white' /></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

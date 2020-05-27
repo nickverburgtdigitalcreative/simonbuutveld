@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import MyModal from "./utils/MyModal";
 import '../App.scss'
 
-import {homepageAnimation, checkOrientation, isMobileDevice, updateCurrentSectionClass, videosAnimation} from './utils'
+import {homepageAnimation, isMobileDevice, updateCurrentSectionClass, videosAnimation} from './utils'
 
 import PreLoader from './PreLoader'
 import Helmet from './Helmet'
@@ -34,10 +34,6 @@ class App extends Component {
         setTimeout(() => {
             homepageAnimation()
         }, 200);
-
-        window.addEventListener('resize', () => {
-            checkOrientation();
-        });
 
         window.addEventListener('orientationchange', () => {
             homepageAnimation();

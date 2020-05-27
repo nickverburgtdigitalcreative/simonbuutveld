@@ -11,12 +11,23 @@ export function viewportWidth(){
 export function innerPageSlideUp() {
     const page = document.getElementsByClassName('page')
     const alphaDark = document.getElementsByClassName('alpha_dark')
-    page[0].classList.add('slideup')
-    alphaDark[0].classList.add('slideup')
+
+    //wish I had jquery for this
+    page[0].addEventListener("transitionend", () => {
+        page[0].style.setProperty("transition", "none")
+    });
+    alphaDark[0].addEventListener("transitionend", () => {
+        alphaDark[0].style.setProperty("transition", "none")
+    });
+    page[0].style.setProperty("margin-top", "-25vh")
+    alphaDark[0].style.setProperty("bottom", "-1px")
+
+    // page[0].classList.add('slideup')
+    // alphaDark[0].classList.add('slideup')
 }
 
 export function checkOrientation(){
-    console.log("called");
+    console.log("orientation check");
     const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
     if (!isLandscape || window.innerHeight > window.innerWidth) {

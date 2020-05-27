@@ -1,8 +1,30 @@
-@media all and (max-width: 1784px) {
-    .page {
-        width: 90%;
+@media (max-width: 1784px) {
+    body.sub {
+        .page {
+            width: 90%;
+        }
+    }
+}@media (min-width: 360.98px) and (max-width: 1784px) {
+    body.sub {
+         .page {
+            width: 100%;
+            max-width: calc(100% - 91px);
+        }
     }
 }
+
+@media all and (max-width:1400px) {
+    #section2_graph1{
+        width: 96%;
+    }
+}
+
+@media all and (max-width:1000px) {
+    .top .t2 { width: 75%; }
+    .paragraph { width: 66%; }
+    .portfolio div { width: 16.66%; }
+}
+
 @media all and (max-width: 960px) {
     // Landscape
     body.landscape{
@@ -15,9 +37,9 @@
                         display: flex;
                         flex-direction: column;
                     }
-                } 
-            } 
-        } 
+                }
+            }
+        }
         #section-0{
             .f1_txt1{
                 margin-bottom: 0.5em;
@@ -50,7 +72,7 @@
             .graph{
                 max-width: 400px;
             }
-        }   
+        }
     }
 
     // Portrait
@@ -78,30 +100,125 @@
                 width: 100%;
             }
         }
-        #section3_graph2{
-            .graph,
-            #graph_s03g02{
-                height: 380px !important;
-                width: 100%;
-            }
+        #section3_graph2 {
+            //#graph_s03g02,
+            //.graph{
+            //    height: 380px !important;
+            //    width: 100%;
+            //}
         }
-        
+
     }
     .top {
         width: 100%;
     }
-    section .top::before, 
+    section .top::before,
     section .bottom::after{
         height: 2.5em;
     }
+}
 
-    // section 2
-    #section2_graph1{
-        .graph{
-            width: 100%;
+@media all and (max-width: 900px) {
+    section{
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    .mb-responsive {
+        margin-bottom: 30px !important;
+    }
+    .hover-text {
+        display: none;
+    }
+    .scroll {
+        font-size: 0.7em;
+    }
+    #sec3_inspiration,
+    .paragraph{
+        margin: 0 auto 6em;
+    }
+
+    // #donutBg{
+    //     bottom: -10%;
+    //     width: 100%;
+    // }
+
+    // Portrait
+    body.portrait{
+        #section-2{
+            .content{
+                height: 90vh;
+            }
         }
+
+        //#section3_graph2{
+        //    padding-bottom: 6em;
+        //    margin-top: -60px;
+        //}
+
+        #s5_robots, #collage{
+            margin-bottom: 30px;
+            margin-top: -50px;
+        }
+        //#s5_robots{
+        //    height: 111px !important;
+        //}
+        //#s4_house{
+        //    margin-top: -50px;
+        //    margin-bottom: 5em;
+        //}
+        //#s4_cars {
+        //    margin-bottom: 30px;
+        //}
+
+        .graph_narrow{
+            width: 75%;
+            margin-bottom: 6em;
+        }
+        // #donutBg{
+        //     bottom: -10%;
+        //     width: 100%;
+        // }
+    }
+
+
+    body.landscape{
+        .paragraph{
+            margin: 0 auto 6em;
+        }
+        #section-2{
+            .txt1{
+                margin-bottom: 0.5em;
+            }
+        }
+        //#section3_graph2{
+        //    margin-bottom: 5em;
+        //    .donut{ margin-top: 2em;}
+        //}
+
+        #s5_robots{
+            //margin-bottom: 13em;
+            //height: 197px !important;
+        }
+        #s5_robots, #collage{
+            margin-bottom: 6em;
+        }
+
+        //#s4_house{
+        //    margin-top: -50px;
+        //    margin-bottom: 7em;
+        //}
+
+        .graph_narrow{
+            width: 75%;
+        }
+        //#donutBg{
+        //    // bottom: -60%;
+        //    //bottom: 0;
+        //    //width: 100%;
+        //}
     }
 }
+
 @media all and (max-width: 800px) {
 
     #toggle #menu ul li a { margin: 0; }
@@ -119,103 +236,6 @@
         width: 100%;
     }
 }
-@media all and (max-width: 900px) {
-    section{
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
-    }
-    .hover-text {
-        display: none;
-    }
-    .scroll {
-        font-size: 0.7em;
-    }
-    #sec3_inspiration,
-    .paragraph{
-        margin: 0 auto 6em;
-    }
-
-    #section2_graph1{
-        width: 96%;
-        margin-left: 2%;
-    }
-
-    // #donutBg{
-    //     bottom: -10%;
-    //     width: 100%;
-    // }
-
-    // Portrait
-    body.portrait{
-        #section-2{
-            .content{
-                height: 90vh;
-            }
-        }
-
-        #section3_graph2{
-            padding-bottom: 6em;
-            margin-top: -60px;
-        }
-        #s5_robots{
-            height: 111px !important;
-        }
-        #s4_cars,
-        #s5_robots,
-        #collage{
-            margin-bottom: 30px;
-            margin-top: -50px;
-        }
-        #s4_house{
-            margin-top: -50px;
-            margin-bottom: 5em;
-        }
-
-        .graph_narrow{
-            width: 75%;
-            margin-bottom: 6em;
-        }
-        // #donutBg{
-        //     bottom: -10%;
-        //     width: 100%;
-        // }
-    }
-    body.landscape{
-        .paragraph{
-            margin: 0 auto 6em;
-        }
-        #section-2{
-            .txt1{
-                margin-bottom: 0.5em;
-            }
-        }
-        #section3_graph2{
-            margin-bottom: 5em;
-            .donut{ margin-top: 2em;}
-        }
-        
-        #s5_robots{
-            margin-bottom: 13em;
-            height: 197px !important;
-        }
-        #s5_robots,
-        #s4_cars,
-        #collage{ margin-bottom: 6em;}
-
-        #s4_cars, 
-        #s4_house{
-            margin-top: -50px;
-            margin-bottom: 7em;
-        }
-
-        .graph_narrow{ width: 75%;}
-        #donutBg{
-            // bottom: -60%;
-            bottom: 0;
-            width: 100%;
-        }
-    }
-}
 
 @media all and (max-width: 667px) {
 
@@ -224,7 +244,7 @@
             .graph{
                 width: 80%;
             }
-        } 
+        }
         // #section3_graph2{
         //     margin-bottom: 50px;
         //     margin-top: -50px;
@@ -232,16 +252,16 @@
         #section3_graph3{
             .graph{
                 width: 100%;
-                
+
                 #graph_s03g03{
                     // min-height: 282px;
 
                     .subFull{
                         // background-size: contain;
-                    //     left: -34%;
+                        //     left: -34%;
                         background-size: 140%;
                         background-position: center;
-                    //     width: 170%;
+                        //     width: 170%;
                     }
                 }
             }
@@ -259,7 +279,7 @@
         #section5_art{
             margin-top: -4em;
         }
-        
+
     }
 
     body.landscape{
@@ -321,14 +341,6 @@
     }
 }
 
-@media all and (min-width: 668px) {
-    #section3_graph2{
-        .desktop{display: block;}
-        .mobile{display: none;}
-    }
-
-}
-
 @media all and (max-width: 640px) {
     html,
     body {
@@ -360,7 +372,7 @@
                 font-size: 1.2em;
             }
         }
-    } 
+    }
 
     section{
         .content{
@@ -387,9 +399,9 @@
         shape-outside: none;
         width: 66%;
     }
-    #graph_s03g02, #graph_s03g02 .subFull { width: 75%; } 
+    //#graph_s03g02, #graph_s03g02 .subFull { width: 75%; }
     .portfolio div { width: 33.3%; }
-    
+
 }
 
 @media all and (max-width: 560px) {
@@ -418,15 +430,18 @@
     }
 }
 
-@media all and (min-width: 1200px) {
-    .br-lgplus {
+@media all and (max-width: 400px) {
+    // .sub .page > div {
+    //     width: 80%;
+    //     max-width: 80%;
+    //     margin: 0 auto 2em;
+    // }
+    #s4_cars, #s4_house, #s5_robots, #collage, .portfolio {
+        max-width: 100% !important; width: 100% !important;
     }
-}
-
-@media all and (max-width:1000px) {
-    .top .t2 { width: 75%; }
-	.paragraph { width: 66%; }
-    .portfolio div { width: 16.66%; }
+    .portfolio div {
+        width: 50%;
+    }
 }
 
 @media all and (max-width:800px), all and (max-height:460px) {
@@ -437,30 +452,28 @@
     }
     .f1_txt3 { width: 85%; }
     .top .t2,
-	.paragraph,
+    .paragraph,
     #sec3_inspiration{ width: 75%; }
     #toggle #menu ul li a { font-size: 2.4em; }
     .portfolio div { width: 25%; }
 }
 
-@media all and (max-height:460px) {
-    .f1_line { margin: 2em auto; }
-    .top::before, .bottom::after { height: 2em; }
-    .top::before { margin-bottom: 0.5em; }
-    .bottom::after { margin-top: 0.5em; }
-    #toggle #menu ul li a { line-height: 15vh; margin: 0; }
+///////////////////////////////////////////////////////////
+
+@media all and (min-width: 1200px) {
+    .br-lgplus {
+    }
 }
 
-@media all and (max-width: 400px) {
-    // .sub .page > div {
-    //     width: 80%;
-    //     max-width: 80%;
-    //     margin: 0 auto 2em;
-    // }
-    #s4_cars, #s4_house, #s5_robots, #collage,
-    .portfolio { max-width: 100% !important; width: 100% !important; }
-    .portfolio div { width: 50%; }
+@media all and (min-width: 668px) {
+    #section3_graph2{
+        .desktop{display: block;}
+        .mobile{display: none;}
+    }
+
 }
+
+///////////////////////////////////////////////////////////
 
 @media all and (max-height: 599.98px) {
     section {
@@ -483,6 +496,14 @@
     #section-2 .txt1 {
         margin-top: 30px;
     }
+}
+
+@media all and (max-height:460px) {
+    .f1_line { margin: 2em auto; }
+    .top::before, .bottom::after { height: 2em; }
+    .top::before { margin-bottom: 0.5em; }
+    .bottom::after { margin-top: 0.5em; }
+    #toggle #menu ul li a { line-height: 15vh; margin: 0; }
 }
 
 @media all and (max-height: 399.98px) {
